@@ -25,7 +25,7 @@ export class RegisterManagerComponent implements OnInit {
         form.reset()
         this.apiService.hideAlert = false
         //this.router.navigateByUrl('login')
-        location.href = 'login'
+        location.href = 'manager-panel'
       }     
      if(res.status == 400){
        this.message = res.message

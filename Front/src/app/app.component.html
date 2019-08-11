@@ -1,2 +1,3 @@
 <app-alert></app-alert>
-<router-outlet></router-outlet>
+<app-register-manager *ngIf="!hasDefaultUser"></app-register-manager>
+<router-outlet *ngIf="hasDefaultUser"></router-outlet>
