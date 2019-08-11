@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+using Market.Models;
+using Market.Models.Registration;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+
+namespace Market.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AuthController : Controller
+    {
+        private readonly IUnitOfWork _marketUoW;
+        public AuthController(IUnitOfWork marketUoW)
+        {
+            _marketUoW = marketUoW;
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login(LoginModel model)
+        {
+
+            //var result =  _marketUoW.UserMngmtRepository().GetJwtToken(model).Result;
+            //return Ok(result);
+
+
+            var user = await _userManager.FindByNameAsync(loginModel.UserName);
+            IdentityOptions _options = new IdentityOptions();
+            if (user != null && await _userManager.CheckPasswordAsync(user, loginModel.Password))
+            {
+                var role = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
+
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]{
+                        new Claim("UserID", user.Id.ToString()),
+                        new Claim(_options.ClaimsIdentity.RoleClaimType, role)
+                    }),
+                    Expires = DateTime.UtcNow.AddDays(1),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWTSecret)),
+                    SecurityAlgorithms.HmacSha256)
+                };
+                if (await _userManager.IsEmailConfirmedAsync(user))
+                {
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    var token = tokenHandler.WriteToken(securityToken);
+                    return new { token };
+                }
+                else return new { message = "Email не подтвержден" };
+
+            }
+            else
+                return new { message = "Username or password is incorrect." };
+
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            AppUser user = new AppUser { UserName = "manager" };
+
+            return _marketUoW.UserMngmtRepository().CreateUser(user);
+
+        }
+
+    }
+}

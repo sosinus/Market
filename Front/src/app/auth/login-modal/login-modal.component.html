@@ -1,0 +1,43 @@
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+    
+            <div class="modal-body">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeModal>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                <div *ngIf="login" style="width: 340px; margin:auto">
+                    <form #form='ngForm' class='mb-4' autocomplete="off" (submit)="onSubmit(form)">
+                            <h2 class="text-center mt-5">Авторизация</h2>   
+                        <div class="form-group">
+                            <label>Логин</label>
+                            <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="form.UserName"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Пароль</label>
+                            <input type="password" class="form-control" #Password="ngModel" name="Password"
+                                [(ngModel)]="form.Password" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                        </div>
+                    </form>
+                    <p class="text-center"><a (click)="login=false">Создать аккаунт</a></p>
+                </div>
+
+
+                <div *ngIf="!login">
+                        <app-register></app-register>
+                        <p class="text-center"><a  (click)="login=true" > Назад</a></p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

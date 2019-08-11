@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+  <div class="block bg-dark">
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="card m-3" style="max-width: 510px;" *ngFor="let item of apiService.itemList">
+        <div class="row no-gutters">
+          <div class="col-md-4 p-3">
+            <img src="{{apiService.forImagesApiURI + item.image}}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">Цена: {{item.price}}</p>
+              <p class="card-text">Категория: {{item.category}}</p>
+              <p class="card-text"><small class="text-muted">Код товара: {{item.code}}</small></p>
+              <button class="btn btn-primary" (click)="addToCart(item)">Добавить в корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

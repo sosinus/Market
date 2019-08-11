@@ -1,0 +1,28 @@
+<div class="container text-center ">
+  <h2>Панель пользователя</h2>
+</div>
+<div class="d-flex justify-content-between border-bottom border-primary">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/items">Просмотр товаров</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="logIn()">Просмотр заказов</a>
+    </li>
+  </ul>
+  <ul class="nav ">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/cart">Корзина <span
+          class="badge badge-light">{{apiService.cart.length}}</span></a>
+      <span class="sr-only">unread messages</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/" (click)="logInOut()">{{apiService.logInText}}</a>
+      <button data-toggle="modal" hidden="true" data-target="#LoginModal" #openModal></button>
+    </li>
+  </ul>
+</div>
+<app-login-modal (onChanged) ="onChanged()"></app-login-modal>
+<div class="container-fluid mt-4">
+  <router-outlet></router-outlet>
+</div>

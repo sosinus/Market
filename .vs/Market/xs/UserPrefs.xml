@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
+  <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Market/Models/UnitOfWork/Repositories/OrderRepository.cs">
+    <Files>
+      <File FileName="Market/Models/UnitOfWork/Repositories/OrderRepository.cs" Line="95" Column="57" />
+      <File FileName="Market/Controllers/OrderController.cs" Line="83" Column="25" />
+      <File FileName="Market/Models/UnitOfWork/UnitOfWork.cs" />
+      <File FileName="Market/Models/MarketDBContext.cs" />
+      <File FileName="Market/Controllers/ImagesController.cs" />
+      <File FileName="Market/Controllers/ItemsController.cs" />
+      <File FileName="Market/Models/UnitOfWork/Repositories/ItemRepository.cs" />
+      <File FileName="Market/appsettings.json" />
+      <File FileName="Market/Controllers/AuthController.cs" Line="47" Column="106" />
+      <File FileName="Market/Controllers/UserController.cs" />
+      <File FileName="Market/Models/UnitOfWork/Repositories/UMRepository.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Market" expanded="True">
+            <Node name="Market" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="UnitOfWork" expanded="True">
+                  <Node name="Repositories" expanded="True">
+                    <Node name="OrderRepository.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

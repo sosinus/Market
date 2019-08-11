@@ -1,0 +1,41 @@
+<app-item-new></app-item-new>
+<app-item-edit></app-item-edit>
+<button type="button" class="btn btn-primary m-2" data-toggle="modal" hidden="true" data-target="#EditModal" #openBtn>
+  Редактировать
+</button>
+<div class="d-flex justify-content-center">
+  <div class="col-md-8">
+    <table class="table table-hover">
+      <thead>
+        <th>
+          Наименование
+        </th>
+        <th>
+          Код товара
+        </th>
+        <th>
+          Цена
+        </th>
+        <th>
+          Категория
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of apiService.itemList" (click)="onRowClick(item)">
+          <td>
+            {{item.name}}
+          </td>
+          <td>
+            {{item.code}}
+          </td>
+          <td>
+            {{item.price}}
+          </td>
+          <td>
+            {{item.category}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

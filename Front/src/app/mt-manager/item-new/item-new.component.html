@@ -1,0 +1,53 @@
+<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModal" (click)="onAddItemButton()">
+  Добавить товар
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Добавление товара</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #form="ngForm" id="ngForm" (submit)="onSubmit(form)">
+          <div class="container">
+            <div class="form-group">
+              <label>Наименование товара</label>
+              <input class="form-control" name="name" [(ngModel)]="apiService.item.name" required />
+            </div>
+            <div class="form-group">
+              <label>Код товара</label>
+              <input class="form-control" name="code" [(ngModel)]="apiService.item.code" required />
+            </div>
+            <div class="form-group">
+              <label>Цена</label>
+              <input class="form-control" name="price" [(ngModel)]="apiService.item.price" required />
+            </div>
+            <div class="form-group">
+              <label>Категория</label>
+              <input class="form-control" name="category" [(ngModel)]="apiService.item.category" required />
+            </div>
+          </div>
+          <div class="container" *ngFor="let image of apiService.images">
+              <button type="button" class="close" aria-label="Close" (click)="apiService.deleteOneImage(image)">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            <img class="img-fluid m-2" src="{{image}}" alt="">
+          </div>
+          <app-upload-image></app-upload-image>
+          
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal" #closeBtn>Отмена</button>       
+        <button type="submit" form="ngForm" class="btn btn-primary">Сохранить</button>
+      </div>
+    
+    </div>
+  </div>
+</div>

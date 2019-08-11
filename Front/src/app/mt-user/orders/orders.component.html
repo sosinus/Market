@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+      <div class="card m-1"  *ngFor="let order of orders; let i =index" style="width: 100%;">
+        <p class="card-text">Заказ номер {{order.id}}</p>
+        <!-- <p class="card-text">Дата доставки: {{String(order.shipment_Date)}}</p> -->
+              <p class="card-text">Дата заказа: {{getDate(order.order_Date)}}</p>
+      <div class="card m-1"  *ngFor="let orderItem of order.orderItems; let i =index" style="width: 100%; height: 210px">
+        <div class="row no-gutters">
+          <div  class="col-md-4" style=" text-align: center">
+            <img src="{{apiService.forImagesApiURI + orderItem.item.image}}" alt="..." style="height: 200px">
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <!-- <h5 class="card-title">{{order.order_date}}</h5> -->
+              <p class="card-text">Наименование: {{orderItem.item.name}}</p>
+              <p class="card-text">Категория: {{orderItem.item.category}}</p>
+              <p class="card-text"><small class="text-muted">Код товара: {{orderItem.item.code}}</small></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <p class="card-text">
+                Количество:
+                
+                {{orderItem.items_count}}
+              
+              </p>
+              <p class="card-text">Цена: {{orderItem.item.price*orderItem.items_count}} руб.</p>              
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div> 
+    </div>    
+  </div>
