@@ -11,3 +11,4 @@ Market/obj/Market.csproj.nuget.dgspec.json
 Market/obj/Market.csproj.nuget.g.props
 Market/obj/Market.csproj.nuget.g.targets
 Market/obj/project.assets.json
+Market/appsettings.json
