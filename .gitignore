@@ -14,3 +14,13 @@ Market/obj/project.assets.json
 Market/appsettings.json
 
 Market/Resources/
+.vs/Market/config/applicationhost.config
+.vs/Market/v16/.suo
+Market/bin/Debug/netcoreapp2.2/appsettings.json
+Market/bin/Debug/netcoreapp2.2/Market.deps.json
+Market/bin/Debug/netcoreapp2.2/Market.dll
+Market/bin/Debug/netcoreapp2.2/Market.pdb
+Market/bin/Debug/netcoreapp2.2/Market.runtimeconfig.dev.json
+Market/obj/Debug/netcoreapp2.2/Market.csproj.FileListAbsolute.txt
+Market/obj/Debug/netcoreapp2.2/Market.dll
+Market/obj/Debug/netcoreapp2.2/Market.pdb
