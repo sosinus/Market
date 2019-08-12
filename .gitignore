@@ -24,3 +24,5 @@ Market/bin/Debug/netcoreapp2.2/Market.runtimeconfig.dev.json
 Market/obj/Debug/netcoreapp2.2/Market.csproj.FileListAbsolute.txt
 Market/obj/Debug/netcoreapp2.2/Market.dll
 Market/obj/Debug/netcoreapp2.2/Market.pdb
+.vs/Market/v16/.suo
+.vs/Market/v16/Server/sqlite3/storage.ide-wal

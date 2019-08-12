@@ -1,37 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj": {}
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj": {
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj",
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
         "projectName": "Market",
-        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj",
-        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\obj\\",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
+        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dmitriykuzin/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {

@@ -32,7 +32,7 @@ export class OrderListComponent implements OnInit {
       },
         err =>
           console.log(err))
-    this.apiService.getUsers()
+    this.apiService.getUsers()  
     this.apiService.getItems()
     this.orderForEdit = new Order()
 
@@ -71,10 +71,11 @@ export class OrderListComponent implements OnInit {
   }
 
   onChange() {
+    
     this.items = this.apiService.itemList.filter((item) => {
       if (item.name.includes(this.searchItem))
         return true
-    })
+    })   
   }
 
   addOrderItem(order: Order, item: Item) {
