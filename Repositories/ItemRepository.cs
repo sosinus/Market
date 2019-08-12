@@ -1,4 +1,5 @@
-﻿using Market.Models.Tables;
+﻿using Market.Models;
+using Market.Models.Tables;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Market.Models
-{
     public interface IItemRepository
     {
-        void AddNewItem(Item item);
+        Task AddNewItem(Item item);
         Item[] GetAllItems();
         int DeleteItem(int id);
         int UpdateItem(Item item);
@@ -23,7 +22,7 @@ namespace Market.Models
             _context = context;
         }
 
-        public async void AddNewItem(Item item)
+        public async Task AddNewItem(Item item)
         {
             await _context.Items.AddAsync(item);
 

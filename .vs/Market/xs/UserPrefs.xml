@@ -1,33 +1,24 @@
 ﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
   <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Market/Models/UnitOfWork/Repositories/OrderRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Repositories/ItemRepository.cs">
     <Files>
-      <File FileName="Market/Models/UnitOfWork/Repositories/OrderRepository.cs" Line="95" Column="57" />
-      <File FileName="Market/Controllers/OrderController.cs" />
-      <File FileName="Market/Models/UnitOfWork/UnitOfWork.cs" />
-      <File FileName="Market/Models/MarketDBContext.cs" />
-      <File FileName="Market/Controllers/ImagesController.cs" />
-      <File FileName="Market/Controllers/ItemsController.cs" />
-      <File FileName="Market/Models/UnitOfWork/Repositories/ItemRepository.cs" />
-      <File FileName="Market/appsettings.json" />
-      <File FileName="Market/Controllers/AuthController.cs" />
-      <File FileName="Market/Controllers/UserController.cs" />
-      <File FileName="Market/Models/UnitOfWork/Repositories/UMRepository.cs" />
+      <File FileName="Market/Models/UnitOfWork/Repositories/ItemRepository.cs" Line="45" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Market" expanded="True">
             <Node name="Market" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="UnitOfWork" expanded="True">
-                  <Node name="Repositories" expanded="True">
-                    <Node name="OrderRepository.cs" selected="True" />
-                  </Node>
-                </Node>
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
             </Node>
+            <Node name="Repositories" expanded="True">
+              <Node name="Dependencies" expanded="True" selected="True" />
+            </Node>
+            <Node name="UnitsOfWork" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -35,6 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Repositories FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

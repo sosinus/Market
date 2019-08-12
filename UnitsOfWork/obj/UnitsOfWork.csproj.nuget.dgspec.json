@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {}
+    "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj": {}
   },
   "projects": {
-    "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {
+    "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
-        "projectName": "Market",
-        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj",
+        "projectName": "UnitsOfWork",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj",
         "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
-        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -39,30 +39,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[2.2.3, )"
             }
           },
           "imports": [

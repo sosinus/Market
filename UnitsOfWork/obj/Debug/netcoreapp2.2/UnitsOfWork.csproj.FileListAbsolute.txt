@@ -1,0 +1,4 @@
+/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.csprojAssemblyReference.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.csproj.CoreCompileInputs.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.AssemblyInfoInputs.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.AssemblyInfo.cs
