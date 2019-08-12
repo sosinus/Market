@@ -9,16 +9,16 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   title = 'Front';
-  hasDefaultUser = false
+  hasDefaultUser : boolean = true
   constructor(private apiService:ApiService, private http:HttpClient) {
- 
+ }
 
-  }
-  ngOninit(){
-    this.http.get(this.apiService.apiURI + "Auth")
-      .toPromise()
-      .then((res: any) => {
-        this.hasDefaultUser = res.hasDefaultUser
-      })
-  }
+ ngOnInit() {
+  this.http.get(this.apiService.apiURI + "Auth")
+    .toPromise()
+    .then((res: any) => {
+      this.hasDefaultUser = res.hasDefaultUser
+    })
+}
+
 }
