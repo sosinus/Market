@@ -88,7 +88,7 @@ namespace Market.Models
                 if(orderItem.Id == 0)
                 {
                     newOrderItems.Append(orderItem);
-                    order.OrderItems.Remove(orderItem);
+                   
                 }                
                
             }

@@ -8,6 +8,14 @@ using System.Threading.Tasks;
 
 namespace Market.Models
 {
+    public interface IUnitOfWork
+    {
+        IUMRepository UseUserMngmtRepository();
+        IItemRepository UseItemRepository();
+        IOrderRepository UseOrderRepository();
+        Task<int> CommitAsync();
+    }
+
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MarketDBContext _marketDBContext;
@@ -22,17 +30,17 @@ namespace Market.Models
         }
 
         public async Task<int> CommitAsync()
-        {             
+        {
             return await _marketDBContext.SaveChangesAsync();
-        }        
+        }
 
         public IUMRepository UseUserMngmtRepository()
-        {           
+        {
             return new UMRepository(_userManager, _appSettings, _marketDBContext);
         }
 
         public IItemRepository UseItemRepository()
-        {             
+        {
             return new ItemRepository(_marketDBContext);
         }
         public IOrderRepository UseOrderRepository()
