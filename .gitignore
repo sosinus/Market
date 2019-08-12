@@ -13,7 +13,7 @@ Market/obj/Market.csproj.nuget.g.targets
 Market/obj/project.assets.json
 Market/appsettings.json
 
-Market/Resources/
+Market/Resources/Images/
 .vs/Market/config/applicationhost.config
 .vs/Market/v16/.suo
 Market/bin/Debug/netcoreapp2.2/appsettings.json
