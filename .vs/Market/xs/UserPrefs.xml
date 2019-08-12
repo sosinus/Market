@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Market/Models/UnitOfWork/Repositories/OrderRepository.cs">
     <Files>
-      <File FileName="Market/Models/UnitOfWork/Repositories/OrderRepository.cs" Line="95" Column="57" />
+      <File FileName="Market/Models/UnitOfWork/Repositories/OrderRepository.cs" Line="104" Column="1" />
       <File FileName="Market/Controllers/OrderController.cs" />
       <File FileName="Market/Models/UnitOfWork/UnitOfWork.cs" />
       <File FileName="Market/Models/MarketDBContext.cs" />
@@ -20,13 +20,7 @@
           <Node name="Market" expanded="True">
             <Node name="Market" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="UnitOfWork" expanded="True">
-                  <Node name="Repositories" expanded="True">
-                    <Node name="OrderRepository.cs" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>

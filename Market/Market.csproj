@@ -17,6 +17,8 @@
 
   <ItemGroup>
     <Folder Include="Resources\Images\Temp\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="UnitOfWork\" />
   </ItemGroup>
 
 </Project>

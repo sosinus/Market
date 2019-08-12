@@ -12941,17 +12941,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
+      "projectUniqueName": "/Users/dmitriykuzin/Documents/Market 05.08/Market/Market/Market/Market.csproj",
       "projectName": "Market",
-      "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
+      "projectPath": "/Users/dmitriykuzin/Documents/Market 05.08/Market/Market/Market/Market.csproj",
       "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
-      "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/",
+      "outputPath": "/Users/dmitriykuzin/Documents/Market 05.08/Market/Market/Market/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/dmitriykuzin/.nuget/NuGet/NuGet.Config"
+        "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

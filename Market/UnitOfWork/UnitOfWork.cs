@@ -24,17 +24,7 @@ namespace Market.Models
         public async Task<int> CommitAsync()
         {             
             return await _marketDBContext.SaveChangesAsync();
-        }
-
-
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
-        {
-            if (_repositories == null) _repositories = new Dictionary<Type, object>();
-
-            var type = typeof(TEntity);
-            if (!_repositories.ContainsKey(type)) _repositories[type] = new Repository<TEntity>(_marketDBContext, _userManager);
-            return (IRepository<TEntity>)_repositories[type];
-        }
+        }        
 
         public IUMRepository UseUserMngmtRepository()
         {           
