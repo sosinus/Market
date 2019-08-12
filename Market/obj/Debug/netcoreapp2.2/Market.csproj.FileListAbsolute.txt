@@ -72,3 +72,17 @@ C:/Users/Dim/Desktop/Market/Market/Market/obj/Debug/netcoreapp2.2/Market.pdb
 /Users/dmitriykuzin/Documents/Market 05.08/Market/Market/Market/obj/Debug/netcoreapp2.2/Market.RazorTargetAssemblyInfo.cache
 /Users/dmitriykuzin/Documents/Market 05.08/Market/Market/Market/obj/Debug/netcoreapp2.2/Market.dll
 /Users/dmitriykuzin/Documents/Market 05.08/Market/Market/Market/obj/Debug/netcoreapp2.2/Market.pdb
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Market.deps.json
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Market.runtimeconfig.json
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Market.runtimeconfig.dev.json
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Market.dll
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Market.pdb
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.csprojAssemblyReference.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.csproj.CoreCompileInputs.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.RazorAssemblyInfo.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.RazorAssemblyInfo.cs
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.AssemblyInfoInputs.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.AssemblyInfo.cs
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.RazorTargetAssemblyInfo.cache
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.dll
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.pdb

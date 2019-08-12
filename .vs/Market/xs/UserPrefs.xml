@@ -1,18 +1,14 @@
 ﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
   <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Market/Models/UnitOfWork/Repositories/OrderRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Market/Controllers/OrderController.cs">
     <Files>
-      <File FileName="Market/Models/UnitOfWork/Repositories/OrderRepository.cs" Line="104" Column="1" />
-      <File FileName="Market/Controllers/OrderController.cs" />
-      <File FileName="Market/Models/UnitOfWork/UnitOfWork.cs" />
+      <File FileName="Market/Controllers/OrderController.cs" Line="1" Column="1" />
       <File FileName="Market/Models/MarketDBContext.cs" />
       <File FileName="Market/Controllers/ImagesController.cs" />
       <File FileName="Market/Controllers/ItemsController.cs" />
-      <File FileName="Market/Models/UnitOfWork/Repositories/ItemRepository.cs" />
       <File FileName="Market/appsettings.json" />
       <File FileName="Market/Controllers/AuthController.cs" />
       <File FileName="Market/Controllers/UserController.cs" />
-      <File FileName="Market/Models/UnitOfWork/Repositories/UMRepository.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
