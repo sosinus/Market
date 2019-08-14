@@ -91,7 +91,6 @@ C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Market.runti
 C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Market.runtimeconfig.dev.json
 C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Market.dll
 C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Market.pdb
-C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.csprojAssemblyReference.cache
 C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.csproj.CoreCompileInputs.cache
 C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.RazorAssemblyInfo.cache
 C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.RazorAssemblyInfo.cs

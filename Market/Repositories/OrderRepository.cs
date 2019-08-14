@@ -16,7 +16,7 @@ namespace Market.Models
         Task<int> AddOrder(OrderItem[] orderItems, string userId);
         Order[] GetOrdersForUser(string userId);
         Order[] GetAllOrders();
-        Object UpdateOrder(Order order);
+        Task<Object> UpdateOrder(Order order);
     }
     public class OrderRepository : IOrderRepository
     {
@@ -80,22 +80,17 @@ namespace Market.Models
             return arr;
         }
 
-        public Object UpdateOrder(Order order)
+        public async Task<Object> UpdateOrder(Order order)
         {
-            List<OrderItem> newOrderItems = new List<OrderItem>();
-            foreach (var orderItem in order.OrderItems)
+            var orderItems = _context.OrderItems.Where(o => o.Order_Id == order.Id).ToList();
+            foreach (var orderIt in orderItems)
             {
-                if(orderItem.Id == 0)
-                {
-                    newOrderItems.Append(orderItem);
-                   
-                }                
-               
+                orderIt.Order = null;
             }
-            _context.OrderItems.AddRange(newOrderItems);
+            _context.OrderItems.RemoveRange(orderItems);
+            await _context.SaveChangesAsync();
             _context.Orders.Update(order);
-            _context.SaveChanges();
-            var newOrder = _context.Orders.SingleOrDefault(ord => ord.Id == order.Id);           
+            await _context.SaveChangesAsync();
             return null;
         }
 

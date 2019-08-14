@@ -79,7 +79,7 @@ namespace Market.Controllers
         [HttpPut]
         public IActionResult UpdateOrder(Order order)
         {
-            _marketUoW.UseOrderRepository().UpdateOrder(order);
+          var res =  _marketUoW.UseOrderRepository().UpdateOrder(order).Result;
             return Ok();
         }
 
