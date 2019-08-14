@@ -16,7 +16,7 @@ namespace Market.Models
         Task<int> AddOrder(OrderItem[] orderItems, string userId);
         Order[] GetOrdersForUser(string userId);
         Order[] GetAllOrders();
-        Task<Object> UpdateOrder(Order order);
+        Task<bool> UpdateOrder(Order order);
     }
     public class OrderRepository : IOrderRepository
     {
@@ -80,8 +80,14 @@ namespace Market.Models
             return arr;
         }
 
-        public async Task<Object> UpdateOrder(Order order)
+        public async Task<bool> UpdateOrder(Order order)
         {
+            foreach (var orderItem in order.OrderItems)
+            {
+                orderItem.Id = default;
+                orderItem.Item = null;
+                orderItem.Order = null;
+            }
             var orderItems = _context.OrderItems.Where(o => o.Order_Id == order.Id).ToList();
             foreach (var orderIt in orderItems)
             {
@@ -90,8 +96,12 @@ namespace Market.Models
             _context.OrderItems.RemoveRange(orderItems);
             await _context.SaveChangesAsync();
             _context.Orders.Update(order);
-            await _context.SaveChangesAsync();
-            return null;
+            int res = await _context.SaveChangesAsync();
+            if (res > 0)
+                return true;
+            else
+                return false;
+
         }
 
     }

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { OrderItem } from './models/orderItem';
 import { Customer } from './models/customer';
 import { flatMap } from 'rxjs/operators';
+import { Order } from './models/order';
 
 @Injectable({
   providedIn: 'root'
@@ -108,7 +109,7 @@ export class ApiService {
   }
 
   getUsers(){  
-  this.http.get(this.apiURI + "User")
+ return  this.http.get(this.apiURI + "User")
   .toPromise()
   .then((res:any)=>{
     this.users = res as User[]

@@ -8,6 +8,6 @@ export class Order{
     order_Number: number
     status: string
     orderItems: OrderItem[]
- 
+    customer_Id: number 
   
 }

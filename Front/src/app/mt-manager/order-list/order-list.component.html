@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-3">
+    <div class="col-3 position-fixed">
 
 
         <div class="d-flex justify-content-between border-bottom border-primary">
@@ -10,16 +10,19 @@
                 </div>
                 <h5>По статусу</h5>
                 <li class="nav-item">
-                    <a class="nav-link active" routerLink="#">Все</a>
+                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('All')">Все</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="item-list">Новые</a>
+                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('New')">Новые</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="user-list">Выполняется</a>
+                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('Processing')">Выполняются</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="order-list">Выполненные</a>
+                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('Complete')">Выполненные</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('Canceled')">Отмененные</button>
                 </li>
             </ul>
         </div>
@@ -33,7 +36,7 @@
                     <table class="table table-hover">
                         <thead></thead>
                         <tbody>
-                            <tr *ngFor="let user of apiService.users ">
+                            <tr *ngFor="let user of users " (click)="filterOrdersByUser(user)">
                                 <td>
                                     {{user.userName}}
                                 </td>
@@ -47,8 +50,8 @@
 
 
     </div>
-    <div class="col-9">
-        <div class="container" style="overflow-y: scroll; width: 100%; height: 88vh;">
+    <div class="offset-3 col-9">
+        <div class="container">
             <div class="row">
                 <div class="card m-1" *ngFor="let order of orders; let i =index" style="width: 100%;">
                     <div class="card m-1" style="width: 100%;">

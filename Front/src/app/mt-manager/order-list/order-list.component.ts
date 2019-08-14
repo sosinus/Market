@@ -6,6 +6,7 @@ import { Customer } from 'src/app/models/customer';
 import { Item } from 'src/app/models/Item';
 import { NgForm } from '@angular/forms';
 import { OrderItem } from 'src/app/models/orderItem';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-order-list',
@@ -14,8 +15,10 @@ import { OrderItem } from 'src/app/models/orderItem';
 })
 export class OrderListComponent implements OnInit {
   orders: Order[]
+  ordersCopy: Order[] = new Array<Order>()
   edit: boolean = false
   orderForEdit: Order = new Order()
+  users: User[]
   items: Item[]
   searchItem: string
   private orderSnapShot: Order = new Order()
@@ -29,10 +32,14 @@ export class OrderListComponent implements OnInit {
         this.orders.sort((a, b) => {
           return b.id - a.id
         })
+        this.ordersCopy = JSON.parse(JSON.stringify(this.orders))
       },
         err =>
           console.log(err))
-    this.apiService.getUsers()  
+
+    this.apiService.getUsers()
+      .then(() => this.users = this.apiService.users.filter(u => u.customer.id > 0))
+
     this.apiService.getItems()
     this.orderForEdit = new Order()
 
@@ -71,11 +78,11 @@ export class OrderListComponent implements OnInit {
   }
 
   onChange() {
-    
+
     this.items = this.apiService.itemList.filter((item) => {
       if (item.name.includes(this.searchItem))
         return true
-    })   
+    })
   }
 
   addOrderItem(order: Order, item: Item) {
@@ -91,13 +98,24 @@ export class OrderListComponent implements OnInit {
     this.items = null
   }
 
-  saveChanges(order:Order){
+  saveChanges(order: Order) {
     this.http.put(this.apiService.apiURI + 'Order', order)
-    .toPromise()
-    .then((res)=>{
-    console.log(res)
-    })
+      .toPromise()
+      .then((res) => {
+        this.orderForEdit.id = null,
+          err => console.log(err)
+      })
   }
 
+  filterOrdersByStatus(filter: string) {
+    if (filter == "All") this.orders = this.ordersCopy
+    if (filter == "New") this.orders = this.ordersCopy.filter(o => o.status == "Новый")
+    if (filter == "Processing") this.orders = this.ordersCopy.filter(o => o.status == "Выполняется")
+    if (filter == "Complete") this.orders = this.ordersCopy.filter(o => o.status == "Выполнен")
+    if (filter == "Canceled") this.orders = this.ordersCopy.filter(o => o.status == "Отменен")
+  }
 
+  filterOrdersByUser(user: User) {
+    this.orders = this.ordersCopy.filter(o => o.customer_Id == user.customer.id)
+  }
 }

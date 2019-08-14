@@ -1,40 +1,54 @@
 <app-user-edit></app-user-edit>
 <app-user-new></app-user-new>
-<button type="button" class="btn btn-primary m-2" hidden data-toggle="modal" data-target="#UserEditModal" #openBtn>
+<button type="button" hidden data-toggle="modal" data-target="#UserEditModal" #openBtn>
     Редактировать
 </button>
-<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#UserNewModal" (click)="onAddItemButton()">
-        Добавить пользователя
-      </button>
-<div class="d-flex justify-content-center">
-    <div class="col-md-8">
-        <table class="table table-hover">
-            <thead>
-                <th>
-                    Логин
-                </th>
-                <th>
-                    Email
-                </th>
 
-                <th>
-                    Адрес
-                </th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of apiService.users" (click)="onRowClick(user)">
-                    <td>
-                        {{user.userName}}
-                    </td>
-                    <td>
-                        {{user.email}}
-                    </td>
-                    <td>
-                        {{user.customer.address}}
-                    </td>
+<div class="row">
+    <div class="col-2">
+        <div class="border-bottom border-primary mb-2" style="width: 100% ">
+            <h4>Управление</h4>
+        </div>
+        <div class="border-bottom border-primary mb-2" style="width: 100% ">
+            <button type="button" class="btn btn-link m-2" data-toggle="modal" data-target="#UserNewModal"
+                (click)="onAddItemButton()">
+                Добавить пользователя
+            </button>
+        </div>
 
-                </tr>
-            </tbody>
-        </table>
+    </div>
+    <div class="col-10">
+        <div class="d-flex justify-content-start">
+            <div class="col-md-9">
+                <table class="table table-hover">
+                    <thead>
+                        <th>
+                            Логин
+                        </th>
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Адрес
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of apiService.users" (click)="onRowClick(user)">
+                            <td>
+                                {{user.userName}}
+                            </td>
+                            <td>
+                                {{user.email}}
+                            </td>
+                            <td>
+                                {{user.customer.address}}
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
