@@ -99,3 +99,11 @@ C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.Assem
 C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.RazorTargetAssemblyInfo.cache
 C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.dll
 C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.pdb
+C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.csprojAssemblyReference.cache
+C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Models.dll
+C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\UnitsOfWork.dll
+C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Models.pdb
+C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\UnitsOfWork.pdb
+C:\Users\Dim\Documents\GitHub\Market\Market\bin\Debug\netcoreapp2.2\Repositories.pdb
+C:\Users\Dim\Documents\GitHub\Market\Market\obj\Debug\netcoreapp2.2\Market.csproj.CopyComplete

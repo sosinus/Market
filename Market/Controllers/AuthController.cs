@@ -1,8 +1,9 @@
-﻿using Market.Models;
-using Market.Models.Registration;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Models;
+using Models.Registration;
 using System.Linq;
+using UnitsOfWork;
 
 namespace Market.Controllers
 {

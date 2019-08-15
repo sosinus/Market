@@ -90,6 +90,7 @@ namespace Market.Controllers
                 return StatusCode(500, "Internal server error" + ex);
             }
         }
+
         [HttpDelete]
         [Route("deleteAll")]
         public IActionResult DeleteAll()

@@ -1,33 +1,102 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {}
+    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj": {}
   },
   "projects": {
-    "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {
+    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
-        "projectName": "Market",
-        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj",
-        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
-        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/",
+        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj",
+        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj",
+        "projectName": "Market",
+        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\Market.csproj",
+        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Market\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj": {
+                "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj"
+              },
+              "C:\\Users\\Dim\\Documents\\GitHub\\Market\\UnitsOfWork\\UnitsOfWork.csproj": {
+                "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\UnitsOfWork\\UnitsOfWork.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -63,6 +132,125 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.2.3, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj",
+        "projectName": "Repositories",
+        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj": {
+                "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\UnitsOfWork\\UnitsOfWork.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\UnitsOfWork\\UnitsOfWork.csproj",
+        "projectName": "UnitsOfWork",
+        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\UnitsOfWork\\UnitsOfWork.csproj",
+        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\UnitsOfWork\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj": {
+                "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj"
+              },
+              "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
             }
           },
           "imports": [

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Models.Tables;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using Market.Models;
-using Market.Models.Tables;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using UnitsOfWork;
 
 namespace Market.Controllers
 {
@@ -58,28 +54,28 @@ namespace Market.Controllers
         [Route("OrderList")]
         public IActionResult GetOrdersForManager()
         {
-            
-                
-                
-                Order[] orders = _marketUoW.UseOrderRepository().GetAllOrders();
 
-                foreach (var order in orders)
+
+
+            Order[] orders = _marketUoW.UseOrderRepository().GetAllOrders();
+
+            foreach (var order in orders)
+            {
+                foreach (var orderItem in order.OrderItems)
                 {
-                    foreach (var orderItem in order.OrderItems)
-                    {
-                        string folderName = Path.Combine("Resources", "Images", orderItem.Item.Id.ToString());
-                        orderItem.Item.Image = Directory.GetFiles(folderName)[0];
-                    }
-
+                    string folderName = Path.Combine("Resources", "Images", orderItem.Item.Id.ToString());
+                    orderItem.Item.Image = Directory.GetFiles(folderName)[0];
                 }
-                return Ok(orders);
-           
+
+            }
+            return Ok(orders);
+
         }
 
         [HttpPut]
         public IActionResult UpdateOrder(Order order)
         {
-          var success =  _marketUoW.UseOrderRepository().UpdateOrder(order).Result;
+            var success = _marketUoW.UseOrderRepository().UpdateOrder(order).Result;
             if (success)
                 return Ok();
             else

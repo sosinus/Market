@@ -1,0 +1,13 @@
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Models.deps.json
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Models.dll
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.dll
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.xml
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\obj\Debug\netcoreapp2.2\Models.csproj.CoreCompileInputs.cache
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\obj\Debug\netcoreapp2.2\Models.AssemblyInfoInputs.cache
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\obj\Debug\netcoreapp2.2\Models.csproj.CopyComplete
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\bin\Debug\netcoreapp2.2\Models.pdb
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\obj\Debug\netcoreapp2.2\Models.dll
+C:\Users\Dim\Documents\GitHub\Market\ClassLibrary1\obj\Debug\netcoreapp2.2\Models.pdb
