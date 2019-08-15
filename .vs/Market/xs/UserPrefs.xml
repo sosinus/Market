@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
   <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Market/Controllers/OrderController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Market/UnitOfWork/UnitOfWork.cs">
     <Files>
-      <File FileName="Market/Controllers/OrderController.cs" Line="1" Column="1" />
-      <File FileName="Market/Models/MarketDBContext.cs" />
-      <File FileName="Market/Controllers/ImagesController.cs" />
-      <File FileName="Market/Controllers/ItemsController.cs" />
-      <File FileName="Market/appsettings.json" />
-      <File FileName="Market/Controllers/AuthController.cs" />
-      <File FileName="Market/Controllers/UserController.cs" />
+      <File FileName="Market/Repositories/OrderRepository.cs" Line="1" Column="1" />
+      <File FileName="Market/appsettings.json" Line="9" Column="62" />
+      <File FileName="Market/Repositories/ItemRepository.cs" Line="35" Column="10" />
+      <File FileName="Market/Controllers/ImagesController.cs" Line="28" Column="33" />
+      <File FileName="Market/Controllers/ItemsController.cs" Line="28" Column="50" />
+      <File FileName="Market/Controllers/UserController.cs" Line="34" Column="18" />
+      <File FileName="Market/Repositories/UMRepository.cs" Line="159" Column="14" />
+      <File FileName="Market/UnitOfWork/UnitOfWork.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,6 +18,10 @@
             <Node name="Market" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+              <Node name="UnitOfWork" expanded="True">
+                <Node name="UnitOfWork.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

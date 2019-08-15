@@ -30,4 +30,16 @@ export class UserItemListComponent implements OnInit {
       this.apiService.cart.push(orderItem)
   }
 
+  sortByPriceIncrease(){
+    this.apiService.itemList.sort((a,b)=>{
+     return a.price-b.price
+    })
+  }
+
+  sortByPriceDecrease(){
+    this.apiService.itemList.sort((a,b)=>{
+      return b.price-a.price
+     })
+  }
+
 }

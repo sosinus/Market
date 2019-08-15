@@ -78,33 +78,46 @@ export class OrderListComponent implements OnInit {
   }
 
   onChange() {
+    if (this.searchItem != null) {
+      if (this.searchItem.length == 0)
+        this.searchItem = null
+      this.items = this.apiService.itemList.filter((item) => {
+        if (item.name.includes(this.searchItem))
+          return true
+      })
+    }
 
-    this.items = this.apiService.itemList.filter((item) => {
-      if (item.name.includes(this.searchItem))
-        return true
-    })
   }
 
   addOrderItem(order: Order, item: Item) {
-    let _item: OrderItem = {
-      item_Id: item.id,
-      item: item,
-      item_Price: item.price,
-      items_count: 1,
-      order_id: order.id
-    }
-    order.orderItems.push(_item)
-    this.searchItem = null
-    this.items = null
+
+      if (order.orderItems.filter(o => o.item.id == item.id).length>0)
+        order.orderItems.find(o => o.item.id == item.id).items_count++
+      else {
+        let _item: OrderItem = {
+          item_Id: item.id,
+          item: item,
+          item_Price: item.price,
+          items_count: 1,
+          order_id: order.id
+        }
+        order.orderItems.push(_item)
+        this.searchItem = null
+        this.items = null
+      }
+
   }
 
   saveChanges(order: Order) {
     this.http.put(this.apiService.apiURI + 'Order', order)
       .toPromise()
       .then((res) => {
-        this.orderForEdit.id = null,
-          err => console.log(err)
-      })
+        this.orderForEdit.id = null
+      },
+        (err) => console.log(err)
+      )
+      .then(() => this.ngOnInit())
+
   }
 
   filterOrdersByStatus(filter: string) {
@@ -117,5 +130,13 @@ export class OrderListComponent implements OnInit {
 
   filterOrdersByUser(user: User) {
     this.orders = this.ordersCopy.filter(o => o.customer_Id == user.customer.id)
+  }
+
+  increaseQuantity(orderItem: OrderItem) {
+    orderItem.items_count++
+  }
+
+  reduceQuantity(orderItem: OrderItem) {
+    orderItem.items_count--
   }
 }

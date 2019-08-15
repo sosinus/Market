@@ -20,9 +20,9 @@
           <div class="card-body">
             <p class="card-text">
               Количество:
-              <button class="btn btn-primary p-1" (click)="reduceQuantity(ordItem)" style="font-size: xx-small;">-</button>
+              <button class="btn btn-link p-1" (click)="reduceQuantity(ordItem)" style="font-size: small;">-</button>
               {{ordItem.items_count}}
-              <button class="btn btn-primary p-1" (click)="increaseQuantity(ordItem)" style="font-size: xx-small;">+</button>
+              <button class="btn btn-link p-1" (click)="increaseQuantity(ordItem)" style="font-size: small;">+</button>
             </p>
             <p class="card-text">Цена: {{ordItem.item.price*ordItem.items_count}} руб.</p>
           </div>

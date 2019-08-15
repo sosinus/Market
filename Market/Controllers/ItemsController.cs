@@ -25,7 +25,8 @@ namespace Market.Controllers
             foreach (Item item in items)
             {
                 string folderName = Path.Combine("Resources", "Images", item.Id.ToString());
-                item.Image = Directory.GetFiles(folderName)[0];
+                if (Directory.Exists(folderName))
+                    item.Image = Directory.GetFiles(folderName)[0];
             }
             return items;
         }

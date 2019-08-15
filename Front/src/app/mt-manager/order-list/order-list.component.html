@@ -16,13 +16,16 @@
                     <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('New')">Новые</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('Processing')">Выполняются</button>
+                    <button type="button" class="btn btn-link"
+                        (click)="filterOrdersByStatus('Processing')">Выполняются</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('Complete')">Выполненные</button>
+                    <button type="button" class="btn btn-link"
+                        (click)="filterOrdersByStatus('Complete')">Выполненные</button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-link" (click)="filterOrdersByStatus('Canceled')">Отмененные</button>
+                    <button type="button" class="btn btn-link"
+                        (click)="filterOrdersByStatus('Canceled')">Отмененные</button>
                 </li>
             </ul>
         </div>
@@ -99,9 +102,11 @@
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <button class="btn btn-link">-</button>
+                                            <button class="btn btn-link p-1" *ngIf="isOrderEdit(order.id)" (click)="reduceQuantity(orderItem)"
+                                                style="font-size: small;">-</button>
                                             <p>{{orderItem.items_count}}</p>
-                                            <button class="btn btn-link">+</button>
+                                            <button class="btn btn-link p-1" *ngIf="isOrderEdit(order.id)" (click)="increaseQuantity(orderItem)"
+                                                style="font-size: small;">+</button>
                                         </div>
                                     </td>
                                     <td>
@@ -121,8 +126,9 @@
                         <div class="d-flex justify-content-between ml-3">
                             <p class="my-auto"> Наименование товара: </p>
                             <div class="position-relative">
-                                <input class="form-control my-auto" name="searchBox" (ngModelChange)="onChange()" autocomplete="off"
-                                    [(ngModel)]="searchItem" style=" width: 150px; height: 2em; min-height: 1em;">
+                                <input class="form-control my-auto" name="searchBox" (keyup)="onChange()"
+                                    autocomplete="off" [(ngModel)]="searchItem"
+                                    style=" width: 150px; height: 2em; min-height: 1em;">
                                 <div class="position-absolute shadow-lg"
                                     style="background-color: white; z-index: 10; width: 150px">
                                     <table *ngIf="items" class="table table-hover" style="margin: 0px">
