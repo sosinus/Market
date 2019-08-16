@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj": {}
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj": {
+    "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj",
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj",
-        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\obj\\",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj",
+        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,13 +39,13 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
+            "IdentityCore": {
               "target": "Package",
-              "version": "[2.2.2, )"
+              "version": "[2.0.2, )"
             },
-            "Microsoft.Extensions.Identity.Stores": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.6, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -64,34 +62,32 @@
         }
       }
     },
-    "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj": {
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\Repositories.csproj",
-        "packagesPath": "C:\\Users\\Dim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\Repositories\\obj\\",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj",
+        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj": {
-                "projectPath": "C:\\Users\\Dim\\Documents\\GitHub\\Market\\ClassLibrary1\\Models.csproj"
+              "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
+                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
               }
             }
           }

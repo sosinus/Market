@@ -1,12 +1,13 @@
 ﻿using Models;
 using Models.Tables;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Repositories
 {
     public interface IItemRepository
     {
-        void AddNewItem(Item item);
+        Task AddNewItem(Item item);
         Item[] GetAllItems();
         int DeleteItem(int id);
         int UpdateItem(Item item);
@@ -19,7 +20,7 @@ namespace Repositories
             _context = context;
         }
 
-        public async void AddNewItem(Item item)
+        public async Task AddNewItem(Item item)
         {
             await _context.Items.AddAsync(item);
 

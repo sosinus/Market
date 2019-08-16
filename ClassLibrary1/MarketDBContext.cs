@@ -12,30 +12,30 @@ namespace Models
         {
 
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Order>()
+            base.OnModelCreating(builder);
+            builder.Entity<Order>()
                 .HasOne(o => o.Customer)
                 .WithMany(o => o.Order)
                 .HasForeignKey("Customer_Id");
 
-            modelBuilder.Entity<OrderItem>()
+            builder.Entity<OrderItem>()
                .HasOne(o => o.Order)
                .WithMany(o => o.OrderItems)
                .HasForeignKey("Order_Id");
 
-            modelBuilder.Entity<OrderItem>()
+            builder.Entity<OrderItem>()
                .HasOne(o => o.Item)
                .WithMany(i => i.OrderItems)
                .HasForeignKey(o => o.Item_Id);
 
-            modelBuilder.Entity<AppUser>()
+            builder.Entity<AppUser>()
                .HasOne(a => a.Customer)
                .WithOne(o => o.AppUser)
                .HasForeignKey<AppUser>("Customer_Id");
 
-            modelBuilder.Entity<IdentityRole>().HasData(
+            builder.Entity<IdentityRole>().HasData(
                 new IdentityRole { Id = "1", Name = "Manager", NormalizedName = "Manager" },
                 new IdentityRole { Id = "2", Name = "User", NormalizedName = "User" });
         }
