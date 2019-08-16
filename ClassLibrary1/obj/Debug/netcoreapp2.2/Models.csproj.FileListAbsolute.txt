@@ -15,3 +15,4 @@ C:/Users/Dim/Documents/GitHub/Market/ClassLibrary1/obj/Debug/netcoreapp2.2/Model
 /Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/Debug/netcoreapp2.2/Models.AssemblyInfo.cs
 /Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/Debug/netcoreapp2.2/Models.dll
 /Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/Debug/netcoreapp2.2/Models.pdb
+/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/Debug/netcoreapp2.2/Models.csprojAssemblyReference.cache

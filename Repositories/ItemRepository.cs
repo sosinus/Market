@@ -7,7 +7,7 @@ namespace Repositories
 {
     public interface IItemRepository
     {
-        Task AddNewItem(Item item);
+        Task<int> AddNewItem(Item item);
         Item[] GetAllItems();
         int DeleteItem(int id);
         int UpdateItem(Item item);
@@ -20,9 +20,11 @@ namespace Repositories
             _context = context;
         }
 
-        public async Task AddNewItem(Item item)
+        public async Task<int> AddNewItem(Item item)
         {
             await _context.Items.AddAsync(item);
+            int res = await _context.SaveChangesAsync();
+            return res;
 
         }
 

@@ -36,7 +36,7 @@ namespace Market.Controllers
         [HttpPost]
         public int NewItem(Item item)
         {
-            _marketUoW.UseItemRepository().AddNewItem(item);            
+           var result = _marketUoW.UseItemRepository().AddNewItem(item).Result;            
             moveImages(item.Id.ToString());
             return result;
         }
