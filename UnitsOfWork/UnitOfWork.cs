@@ -15,26 +15,19 @@ namespace UnitsOfWork
     {
         IUMRepository UseUserMngmtRepository();
         IItemRepository UseItemRepository();
-        IOrderRepository UseOrderRepository();
-        Task<int> CommitAsync();
+        IOrderRepository UseOrderRepository();        
     }
 
     public class UnitOfWork : IUnitOfWork
     {
         private readonly MarketDBContext _marketDBContext;
-        private readonly UserManager<AppUser> _userManager;
-        private Dictionary<Type, object> _repositories;
+        private readonly UserManager<AppUser> _userManager;        
         private readonly ApplicationSettings _appSettings;
         public UnitOfWork(MarketDBContext marketDBContext, UserManager<AppUser> userManager, IOptions<ApplicationSettings> appSettings)
         {
             _marketDBContext = marketDBContext;
             _userManager = userManager;
             _appSettings = appSettings.Value;
-        }
-
-        public async Task<int> CommitAsync()
-        {
-            return await _marketDBContext.SaveChangesAsync();
         }
 
         public IUMRepository UseUserMngmtRepository()

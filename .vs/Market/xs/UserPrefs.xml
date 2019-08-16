@@ -1,17 +1,16 @@
 ﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
   <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Market/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClassLibrary1/Tables/Item.cs">
     <Files>
       <File FileName="Market/appsettings.json" Line="10" Column="6" />
+      <File FileName="UnitsOfWork/UnitOfWork.cs" Line="31" Column="10" />
+      <File FileName="Market/Controllers/ItemsController.cs" Line="39" Column="61" />
+      <File FileName="ClassLibrary1/Tables/Item.cs" Line="10" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Market" expanded="True">
-            <Node name="Market" expanded="True">
-              <Node name="appsettings.json" selected="True" />
-            </Node>
-          </Node>
+          <Node name="Market" expanded="True" />
         </State>
       </Pad>
     </Pads>

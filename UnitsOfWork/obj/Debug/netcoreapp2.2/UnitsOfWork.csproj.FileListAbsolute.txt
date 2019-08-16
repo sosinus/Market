@@ -32,9 +32,3 @@ C:/Users/Dim/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOf
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.csproj.CopyComplete
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.dll
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.pdb
-C:\Users\Dim\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csprojAssemblyReference.cache
-C:\Users\Dim\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csproj.CoreCompileInputs.cache
-C:\Users\Dim\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.AssemblyInfoInputs.cache
-C:\Users\Dim\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.AssemblyInfo.cs
-C:\Users\Dim\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.dll
-C:\Users\Dim\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.pdb
