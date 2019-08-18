@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Models.Registration;
+using Models.RepositoryResults;
 using Models.Tables;
 using System;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Repositories
 {
     public interface IOrderRepository
     {
-        Task<int> AddOrder(OrderItem[] orderItems, string userId);
+        Task<AddOrderResult> AddOrder(OrderItem[] orderItems, string userId);
         Order[] GetOrdersForUser(string userId);
         Order[] GetAllOrders();
         Task<bool> UpdateOrder(Order order);
@@ -28,8 +29,9 @@ namespace Repositories
             _userManager = userManager;
         }
 
-        public async Task<int> AddOrder(OrderItem[] orderItems, string userId)
+        public async Task<AddOrderResult> AddOrder(OrderItem[] orderItems, string userId)
         {
+            AddOrderResult result = new AddOrderResult();
             AppUser user = _userManager.Users.SingleOrDefault(u => u.Id == userId);
             if (user.Customer_Id != null && orderItems.Length > 0)
             {
@@ -52,9 +54,12 @@ namespace Repositories
                 }
 
                 await _context.OrderItems.AddRangeAsync(orderItems);
-                return await _context.SaveChangesAsync();
+                int SaveChangesResult = await _context.SaveChangesAsync();
+                if (SaveChangesResult > 0)
+                    result.Success = true;
+                
             }
-            else return 0;
+            return result;
         }
 
         public Order[] GetOrdersForUser(string userId)

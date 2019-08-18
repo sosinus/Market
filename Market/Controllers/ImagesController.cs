@@ -23,7 +23,6 @@ namespace Market.Controllers
                     return Ok(images);
                 }
                 else return Ok(null);
-
             }
             return BadRequest();
         }

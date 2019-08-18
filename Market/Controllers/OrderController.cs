@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Models.RepositoryResults;
 using Models.Tables;
 using System.IO;
 using System.Linq;
@@ -17,17 +19,17 @@ namespace Market.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "User")]
         public IActionResult AddOrder(OrderItem[] orderItems)
         {
             string userId = User.Claims.SingleOrDefault(c => c.Type == "UserID").Value;
-            int result = _marketUoW.UseOrderRepository().AddOrder(orderItems, userId).Result;
-            if (result > 0)
-                return Ok();
-            else
-                return BadRequest();
+            AddOrderResult result = _marketUoW.UseOrderRepository().AddOrder(orderItems, userId).Result;
+            return Ok(result);
+
         }
 
         [HttpGet]
+        [Authorize(Roles = "User")]
         public IActionResult GetOrdersForUser()
         {
             if (User.Claims.SingleOrDefault(c => c.Type == "UserID") != null)
@@ -52,11 +54,9 @@ namespace Market.Controllers
 
         [HttpGet]
         [Route("OrderList")]
+        [Authorize(Roles = "Manager")]
         public IActionResult GetOrdersForManager()
         {
-
-
-
             Order[] orders = _marketUoW.UseOrderRepository().GetAllOrders();
 
             foreach (var order in orders)
@@ -73,6 +73,7 @@ namespace Market.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Manager")]
         public IActionResult UpdateOrder(Order order)
         {
             var success = _marketUoW.UseOrderRepository().UpdateOrder(order).Result;
@@ -83,7 +84,8 @@ namespace Market.Controllers
         }
 
         [HttpPost]
-        [Route("cancel")]
+        [Route("Cancel")]
+        [Authorize(Roles = "User")]
         public IActionResult CancelOrder(Order order)
         {
             order.Status = "Отменен";

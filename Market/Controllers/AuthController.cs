@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.Registration;
+using Models.RepositoryResults;
+using Models.Tables;
 using System.Linq;
 using UnitsOfWork;
 
@@ -29,36 +31,28 @@ namespace Market.Controllers
         [HttpGet]
         public IActionResult LoadPage()
         {
+            LoadPageResult result = new LoadPageResult();
             if (_marketUoW.UseUserMngmtRepository().GetAllUsers().Length == 0)
-                return Ok(new { hasDefaultUser = false });
+                result.HasDefaultUser = false;
             else
-                return Ok(new { hasDefaultUser = true });
+                result.HasDefaultUser = true;
+            return Ok(result);
         }
 
         [HttpPost]
         [Route("CreateUser")]
         public IActionResult Register(LoginRegisterModel user)
         {
-            int result = _marketUoW.UseUserMngmtRepository().CreateUser(user, "User");
-            //string message = "Пользователь успешно создан";
-            if (result == 1)
-                return Ok(new { message = "Пользователь успешно создан", status = 200 });
-            if (result == 2)
-                return Ok(new { message = "Пользователь с таким логином уже существует", status = 400 });
-            return StatusCode(500);
+            CreateUserResult result = _marketUoW.UseUserMngmtRepository().CreateUser(user, "User");
+            return Ok(result);
         }
 
         [HttpPost]
         [Route("CreateManager")]
         public IActionResult RegisterManager(LoginRegisterModel user)
         {
-            int result = _marketUoW.UseUserMngmtRepository().CreateUser(user, "Manager");
-            //string message = "Пользователь успешно создан";
-            if (result == 1)
-                return Ok(new { message = "Пользователь успешно создан", status = 200 });
-            if (result == 2)
-                return Ok(new { message = "Пользователь с таким логином уже существует", status = 400 });
-            return StatusCode(500);
+            CreateUserResult result = _marketUoW.UseUserMngmtRepository().CreateUser(user, "Manager");
+            return Ok(result);
         }
 
         [HttpPost]
@@ -77,13 +71,12 @@ namespace Market.Controllers
         public IActionResult GetCustomer()
         {
             string userId = User.Claims.SingleOrDefault(c => c.Type == "UserID").Value;
-            var result = _marketUoW.UseUserMngmtRepository().GetCustomer(userId);
+            Customer result = _marketUoW.UseUserMngmtRepository().GetCustomer(userId);
             if (result != null)
             {
                 return Ok(result);
             }
-            else return Ok(null);
-
+            else return Ok();
         }
     }
 }

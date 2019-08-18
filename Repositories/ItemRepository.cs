@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.RepositoryResults;
 using Models.Tables;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,10 +8,10 @@ namespace Repositories
 {
     public interface IItemRepository
     {
-        Task<int> AddNewItem(Item item);
+        Task<ItemResult> AddNewItem(Item item);
         Item[] GetAllItems();
-        int DeleteItem(int id);
-        int UpdateItem(Item item);
+        ItemResult DeleteItem(int id);
+        ItemResult UpdateItem(Item item);
     }
     public class ItemRepository : IItemRepository
     {
@@ -20,11 +21,14 @@ namespace Repositories
             _context = context;
         }
 
-        public async Task<int> AddNewItem(Item item)
+        public async Task<ItemResult> AddNewItem(Item item)
         {
+            ItemResult result = new ItemResult();
             await _context.Items.AddAsync(item);
-            int res = await _context.SaveChangesAsync();
-            return res;
+            int changedItemsCount = await _context.SaveChangesAsync();
+            if (changedItemsCount > 0)
+                result.Success = true;
+            return result;
 
         }
 
@@ -32,17 +36,28 @@ namespace Repositories
         {
             return _context.Items.ToArray();
         }
-        public int DeleteItem(int id)
+        public ItemResult DeleteItem(int id)
         {
+            ItemResult result = new ItemResult();
             Item item = _context.Items.SingleOrDefault(i => i.Id == id);
             _context.Items.Remove(item);
-            int result = _context.SaveChanges();
+            int SaveChangesResult = _context.SaveChanges();
+            if (SaveChangesResult > 0)
+                result.Success = true;
             return result;
         }
-        public int UpdateItem(Item item)
+
+
+        public ItemResult UpdateItem(Item item)
         {
+            ItemResult result = new ItemResult();
             _context.Items.Update(item);
-            return _context.SaveChanges();
+            int SaveChangesResult = _context.SaveChanges();
+            if(SaveChangesResult > 0)
+            {
+                result.Success = true;
+            }
+            return result;
         }
     }
 }

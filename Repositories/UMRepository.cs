@@ -16,11 +16,11 @@ namespace Repositories
 {
     public interface IUMRepository
     {
-        int CreateUser(LoginRegisterModel user, string role);
+        CreateUserResult CreateUser(LoginRegisterModel user, string role);
         Array GetAllUsers();
         Task<GetJwtResult> GetJwtToken(LoginRegisterModel loginModel);
         Task<IdentityResult> AssignCustomer(FrontCustomer frontCustomer, string userId);
-        Object GetCustomer(string id);
+        Customer GetCustomer(string id);
         Task UpdateUser(AppUser appUser);
     }
 
@@ -36,32 +36,41 @@ namespace Repositories
             _context = context;
         }
 
-        public int CreateUser(LoginRegisterModel user, string role)
+        public CreateUserResult CreateUser(LoginRegisterModel user, string role)
         {
+            CreateUserResult result = new CreateUserResult();
             AppUser appuser = new AppUser() { UserName = user.UserName, Email = user.Email };
             try
             {
                 if (_userManager.Users.SingleOrDefault(u => u.UserName == user.UserName) != null)
                 {
-                    return 2;
+                    result.Message = "Пользователь с таким логином уже существует";
+                    result.Success = false;
+                    result.IsAlreadyExist = true;
                 }
-                IdentityResult userCreation = _userManager.CreateAsync(appuser, user.Password).Result;
-                IdentityResult inRoleAdding = _userManager.AddToRoleAsync(appuser, role).Result;
-                if (userCreation.Succeeded)
+                else
                 {
-                    if (inRoleAdding.Succeeded)
-                        return 1;
-                    AppUser appUser = _userManager.Users.SingleOrDefault(u => u.UserName == user.UserName);
-                    _userManager.DeleteAsync(appUser);
-                    return 3;
+                    IdentityResult userCreation = _userManager.CreateAsync(appuser, user.Password).Result;
+                    IdentityResult inRoleAdding = _userManager.AddToRoleAsync(appuser, role).Result;
+                    if (userCreation.Succeeded)
+                    {
+                        if (inRoleAdding.Succeeded)
+                            result.IsAlreadyExist = false;
+                            result.Success = true;
+                            result.Message = "Пользователь успешно создан";
+                        AppUser appUser = _userManager.Users.SingleOrDefault(u => u.UserName == user.UserName);
+                        _userManager.DeleteAsync(appUser);
+                        result.IsAlreadyExist = false;
+                        result.Other = true;
+                        result.Message = "Не удалось создать пользователя";
+                    }                    
                 }
-                return 3;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                return 3;
+                result.Message = "Не удалось создать пользователя " + ex;
             }
+            return result;
         }
 
         public Array GetAllUsers()
@@ -92,16 +101,16 @@ namespace Repositories
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
-                resutl.token = token;
-                resutl.success = true;
+                resutl.Token = token;
+                resutl.Success = true;
                 return resutl;
 
             }
             else
             {
-                resutl.success = false;
+                resutl.Success = false;
                 return resutl;
-            }                
+            }
         }
 
         public async Task<IdentityResult> AssignCustomer(FrontCustomer frontCustomer, string userId)
@@ -131,18 +140,13 @@ namespace Repositories
             return new IdentityResult();
         }
 
-        public Object GetCustomer(string id)
+        public Customer GetCustomer(string id)
         {
 
             var user = _userManager.Users.Include(u => u.Customer).SingleOrDefault(u => u.Id == id);
             if (user.Customer != null)
             {
-                return new
-                {
-                    name = user.Customer.Name,
-                    address = user.Customer.Address,
-                    discount = user.Customer.Discount
-                };
+                return user.Customer;
             }
             else
                 return null;
@@ -152,14 +156,14 @@ namespace Repositories
         public async Task UpdateUser(AppUser appUser)
         {
             // var user = _userManager.Users.SingleOrDefault(u=>u.Id == appUser.Id);
-           
+
             _context.Customers.Update(appUser.Customer);
-           await  _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             appUser.Customer = null;
             try
             {
 
-                var sus = _userManager.UpdateAsync(appUser).Result;               
+                var sus = _userManager.UpdateAsync(appUser).Result;
             }
             catch (Exception ex)
             {

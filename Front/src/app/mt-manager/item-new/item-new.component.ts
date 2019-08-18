@@ -5,6 +5,7 @@ import { Item } from 'src/app/models/Item';
 import { element } from 'protractor';
 import { ViewChild, ElementRef } from '@angular/core';
 import { ItemListComponent } from '../item-list/item-list.component';
+import { ItemResult } from 'src/app/models/results';
 
 
 
@@ -18,25 +19,28 @@ import { ItemListComponent } from '../item-list/item-list.component';
 export class ItemNewComponent implements OnInit {
   @ViewChild('closeBtn', { static: false }) closeBtn: ElementRef;
   constructor(private apiService: ApiService) {
-    this.apiService.images = new Array<string>()    
-   // this.apiService.images.push("https://localhost:44369/Resources/Images/Temp/e7e85af4-ae4f-4579-b612-10b8b324fdf8/Vh7oLhOuS-8.jpg")
-   }
-
-  ngOnInit() {    
+    this.apiService.images = new Array<string>()
+    // this.apiService.images.push("https://localhost:44369/Resources/Images/Temp/e7e85af4-ae4f-4579-b612-10b8b324fdf8/Vh7oLhOuS-8.jpg")
   }
 
- 
+  ngOnInit() {
+  }
+
+
   async onSubmit(form: NgForm) {
     if (form.valid) {
-     await this.apiService.postItem().subscribe(
-        (res: any) => {
-          console.log(res);
-          this.closeBtn.nativeElement.click()
-        }
-      )
-      await this.sleep(100)
-      this.apiService.item = new Item()
-      this.apiService.getItems()
+      await this.apiService.postItem().
+        toPromise()
+        .then(
+          (res: ItemResult) => {
+            if (res.success) {
+              this.closeBtn.nativeElement.click()
+              this.apiService.getItems()
+            }
+            else
+            this.apiService.makeAlert("Не удалось добавить товар")
+          }
+        )
     }
   }
 
@@ -44,7 +48,7 @@ export class ItemNewComponent implements OnInit {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  onAddItemButton(){
-    this.apiService.deleteImages()    
+  onAddItemButton() {
+    this.apiService.deleteImages()
   }
 }

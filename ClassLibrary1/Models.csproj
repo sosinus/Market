@@ -21,4 +21,7 @@
     <Folder Include="RepositoryResults\" />
     <Folder Include="FrontModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources.resx" />
+  </ItemGroup>
 </Project>

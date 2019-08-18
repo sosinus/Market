@@ -11,6 +11,7 @@ import { OrderItem } from './models/orderItem';
 import { Customer } from './models/customer';
 import { flatMap } from 'rxjs/operators';
 import { Order } from './models/order';
+import { AddOrderResult } from './models/results';
 
 @Injectable({
   providedIn: 'root'
@@ -100,24 +101,28 @@ export class ApiService {
 
   applyOrder() {
     this.http.post(this.apiURI + "Order", this.cart).toPromise()
-      .then(res =>
-        console.log(res),
+      .then((res: AddOrderResult) => {
+        if (res.success)
+          this.makeAlert("Ваш заказ успешно оформлен!")
+        else
+          this.makeAlert("Не удалось добавить заказ")
+      },
         err =>
-          console.log(err)
+          this.makeAlert("Не удалось добавить заказ")
       )
     this.cart = new Array<OrderItem>()
   }
 
-  getUsers(){  
- return  this.http.get(this.apiURI + "User")
-  .toPromise()
-  .then((res:any)=>{
-    this.users = res as User[]
-    this.users.forEach(user => {
-     if(!user.customer) user.customer = new Customer()
-    });
-  })
-}
+  getUsers() {
+    return this.http.get(this.apiURI + "User")
+      .toPromise()
+      .then((res: any) => {
+        this.users = res as User[]
+        this.users.forEach(user => {
+          if (!user.customer) user.customer = new Customer()
+        });
+      })
+  }
   //--------Item Managment----------------
   postItem() {
     return this.http.post(this.apiURI + 'items', this.item)

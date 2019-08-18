@@ -32,8 +32,6 @@ export class LoginComponent implements OnInit {
           let userRole: String = payLoad.role;
           this.router.navigateByUrl(userRole.toLowerCase() + '-panel')
         }
-        else 
-        console.log("Dick")
       },
       err => {
         if (err.status == 400)

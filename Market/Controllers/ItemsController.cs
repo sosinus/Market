@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Models.RepositoryResults;
 using Models.Tables;
 using System;
 using System.IO;
@@ -18,8 +20,7 @@ namespace Market.Controllers
         }
 
         [HttpGet]
-        // [Authorize(Roles = "Manager, User")]
-        public Object Get()
+        public IActionResult Get()
         {
             Item[] items = _marketUoW.UseItemRepository().GetAllItems();
             foreach (Item item in items)
@@ -28,42 +29,38 @@ namespace Market.Controllers
                 if (Directory.Exists(folderName))
                     item.Image = Directory.GetFiles(folderName)[0];
             }
-            return items;
+            return Ok(items);
         }
 
 
 
         [HttpPost]
-        public int NewItem(Item item)
+        [Authorize(Roles = "Manager")]
+        public IActionResult NewItem(Item item)
         {
-           var result = _marketUoW.UseItemRepository().AddNewItem(item).Result;            
+            ItemResult result = _marketUoW.UseItemRepository().AddNewItem(item).Result;
             moveImages(item.Id.ToString());
-            return result;
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Manager")]
         public IActionResult DeleteItem(int id)
         {
-            int result = _marketUoW.UseItemRepository().DeleteItem(id);
+            ItemResult result = _marketUoW.UseItemRepository().DeleteItem(id);
             string imgPath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Images", id.ToString());
             if (Directory.Exists(imgPath))
                 Directory.Delete(imgPath, true);
-            if (result == 1)
-                return Ok();
-            else
-                return BadRequest();
+            return Ok(result);
         }
 
         [HttpPut]
+        [Authorize(Roles = "Manager")]
         public IActionResult UpdateItem(Item item)
         {
-            if (_marketUoW.UseItemRepository().UpdateItem(item) == 1)
-            {
-                moveImages(item.Id.ToString());
-                return Ok();
-            }
-            else
-                return BadRequest();
+            ItemResult result = _marketUoW.UseItemRepository().UpdateItem(item);
+            moveImages(item.Id.ToString());
+            return Ok(result);
 
         }
 

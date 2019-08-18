@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
+import { CreateUserResult, GetJwtResult } from 'src/app/models/results';
 
 @Component({
   selector: 'app-register',
@@ -22,14 +23,12 @@ export class RegisterComponent implements OnInit {
     if (form.valid) {
       this.apiService.register(form.value)
         .toPromise()
-        .then((res: any) => {
-          if (res.status == 200) {
-            console.log(res.message)
+        .then((res: CreateUserResult) => {
+          if (res.success) {
             this.apiService.makeAlert("Вы успешно зарегистрировались!");
-            console.log(form.value)
             this.apiService.login(form.value)
               .toPromise()
-              .then((res: any) => {
+              .then((res: GetJwtResult) => {
                 localStorage.setItem('token', res.token);
                 this.closeModal.nativeElement.click()
                 form.reset()
@@ -37,7 +36,7 @@ export class RegisterComponent implements OnInit {
               }
               )
           }
-          if (res.status == 400) {
+          if (res.isAlreadyExist) {
             this.message = res.message
           }
         })
@@ -57,9 +56,9 @@ export class RegisterComponent implements OnInit {
         this.message = 'Введите логин'
       }
       else
-      if(form.value.UserName.length<3)
-      this.message = 'Слишком короткий логин'
-     
+        if (form.value.UserName.length < 3)
+          this.message = 'Слишком короткий логин'
+
     }
 
 

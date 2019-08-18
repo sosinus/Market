@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
+import { ItemResult } from 'src/app/models/results';
 
 @Component({
   selector: 'app-item-edit',
@@ -17,31 +18,36 @@ export class ItemEditComponent implements OnInit {
   }
   async onSubmit(form: NgForm) {
     if (form.valid) {
-       this.apiService.updateItem()
-      .toPromise()
-      .then(
-        (res: any) => {
-          console.log(res);
-          this.closeBtn.nativeElement.click()
-        }
-      )
-      .then(()=>this.apiService.getItems())
-      
-      
+      this.apiService.updateItem()
+        .toPromise()
+        .then(
+          (res: ItemResult) => {
+            if (res.success)
+              this.closeBtn.nativeElement.click()
+            else
+              this.apiService.makeAlert("Не удалось обновить товар")
+          }
+        )
+        .then(() => this.apiService.getItems())
+
+
     }
   }
 
   onDelete() {
     this.apiService.deleteItem()
       .toPromise()
-      .then(() => {
-        this.closeBtn.nativeElement.click()
-        this.apiService.getItems()
+      .then((res: ItemResult) => {
+        if (res.success)
+          this.closeBtn.nativeElement.click()
+        else
+          this.apiService.makeAlert("Не удалось обновить товар")
       })
+      .then(() => this.apiService.getItems())
   }
 
-  del(image){
-    this.apiService.images = this.apiService.images.filter(im=>im!=image)
+  del(image) {
+    this.apiService.images = this.apiService.images.filter(im => im != image)
   }
 
 

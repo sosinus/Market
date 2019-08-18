@@ -91,20 +91,20 @@ export class OrderListComponent implements OnInit {
 
   addOrderItem(order: Order, item: Item) {
 
-      if (order.orderItems.filter(o => o.item.id == item.id).length>0)
-        order.orderItems.find(o => o.item.id == item.id).items_count++
-      else {
-        let _item: OrderItem = {
-          item_Id: item.id,
-          item: item,
-          item_Price: item.price,
-          items_count: 1,
-          order_id: order.id
-        }
-        order.orderItems.push(_item)
-        this.searchItem = null
-        this.items = null
+    if (order.orderItems.filter(o => o.item.id == item.id).length > 0)
+      order.orderItems.find(o => o.item.id == item.id).items_count++
+    else {
+      let _item: OrderItem = {
+        item_Id: item.id,
+        item: item,
+        item_Price: item.price,
+        items_count: 1,
+        order_id: order.id
       }
+      order.orderItems.push(_item)
+      this.searchItem = null
+      this.items = null
+    }
 
   }
 
@@ -137,6 +137,7 @@ export class OrderListComponent implements OnInit {
   }
 
   reduceQuantity(orderItem: OrderItem) {
+    if(orderItem.items_count>1)
     orderItem.items_count--
   }
 }
