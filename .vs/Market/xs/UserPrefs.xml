@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
   <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Market/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Market/Controllers/AuthController.cs">
     <Files>
-      <File FileName="Market/appsettings.json" Line="10" Column="6" />
-      <File FileName="UnitsOfWork/UnitOfWork.cs" />
-      <File FileName="Market/Controllers/ItemsController.cs" Line="41" Column="27" />
-      <File FileName="Repositories/ItemRepository.cs" Line="10" Column="10" />
-      <File FileName="ClassLibrary1/ApplicationSettings.cs" Line="1" Column="1" />
+      <File FileName="Market/Controllers/AuthController.cs" Line="25" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Market" expanded="True">
             <Node name="Market" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="appsettings.json" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="AuthController.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Models" expanded="True">
+              <Node name="RepositoryResults" expanded="True" />
             </Node>
             <Node name="Repositories" expanded="True" />
           </Node>

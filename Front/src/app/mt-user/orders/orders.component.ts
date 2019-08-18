@@ -27,4 +27,9 @@ export class OrdersComponent implements OnInit {
     return date.split('T')[0]
   }
 
+  cancelOrder(order:Order){
+    this.http.post(this.apiService.apiURI + "Order/cancel", order)
+    .toPromise()
+    .then(()=>this.ngOnInit())
+  }
 }

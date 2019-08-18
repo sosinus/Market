@@ -82,5 +82,17 @@ namespace Market.Controllers
                 return BadRequest();
         }
 
+        [HttpPost]
+        [Route("cancel")]
+        public IActionResult CancelOrder(Order order)
+        {
+            order.Status = "Отменен";
+            var success = _marketUoW.UseOrderRepository().UpdateOrder(order).Result;
+            if (success)
+                return Ok();
+            else
+                return BadRequest();
+        }
+
     }
 }

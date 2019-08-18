@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
+import { GetJwtResult } from 'src/app/models/results';
 
 
 @Component({
@@ -24,11 +25,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.apiService.login(form.value).subscribe(
-      (res: any) => {
-        localStorage.setItem('token', res.token);
-        var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-        let userRole: String = payLoad.role;
-        this.router.navigateByUrl(userRole.toLowerCase() + '-panel')
+      (res: GetJwtResult) => {
+        if (res.success) {
+          localStorage.setItem('token', res.token);
+          var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+          let userRole: String = payLoad.role;
+          this.router.navigateByUrl(userRole.toLowerCase() + '-panel')
+        }
+        else 
+        console.log("Dick")
       },
       err => {
         if (err.status == 400)

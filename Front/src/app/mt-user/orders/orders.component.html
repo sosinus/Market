@@ -34,7 +34,7 @@
         
       </div>  
       <div class="d-flex justify-content-end m-2">
-        <button class="btn btn-primary">Отменить заказ</button>
+        <button *ngIf="order.status=='Новый'" (click)="cancelOrder(order)" class="btn btn-primary">Отменить заказ</button>
       </div>
       
     </div> 

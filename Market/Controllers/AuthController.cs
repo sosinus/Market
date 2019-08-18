@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.Registration;
 using System.Linq;
@@ -12,7 +11,7 @@ namespace Market.Controllers
     public class AuthController : Controller
     {
         private readonly IUnitOfWork _marketUoW;
-        public AuthController(IUnitOfWork marketUoW, UserManager<AppUser> userManager)
+        public AuthController(IUnitOfWork marketUoW)
         {
             _marketUoW = marketUoW;
         }

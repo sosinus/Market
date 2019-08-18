@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { GetJwtResult } from 'src/app/models/results';
 
 @Component({
   selector: 'app-login-modal',
@@ -15,6 +16,7 @@ export class LoginModalComponent implements OnInit {
   @Output() onChanged = new EventEmitter();
   @ViewChild('closeModal', { static: false })
   closeModal: ElementRef
+  message: string
   constructor(private apiService: ApiService, private router: Router, private http: HttpClient) { }
 
 
@@ -27,24 +29,26 @@ export class LoginModalComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.apiService.login(form.value)
-      .toPromise()
-      .then((res: any) => {
-        localStorage.setItem('token', res.token);
-        this.closeModal.nativeElement.click()
-        var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]))
-        var userRole = payLoad.role
-        if (userRole == "Manager")
-          this.router.navigateByUrl('manager-panel')
-        this.onChanged.emit()
-      },
-        err => {
-          if (err.status == 400)
-            console.log('Неправильное имя пользователя или пароль');
+    if (form.valid) {
+      this.apiService.login(form.value)
+        .toPromise()
+        .then((res: GetJwtResult) => {
+          if (res.success) {
+            localStorage.setItem('token', res.token);
+            this.closeModal.nativeElement.click()
+            var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]))
+            var userRole = payLoad.role
+            if (userRole == "Manager")
+              this.router.navigateByUrl('manager-panel')
+            this.onChanged.emit()
+            form.resetForm()
+            this.message = ""
+            this.login = true
+          }
           else
-            console.log(err);
-        }
-      );
+            this.message = "Неправильное имя пользователя или пароль"
+        });
+    }
   }
 
 }

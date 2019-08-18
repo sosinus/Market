@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Models;
 using Models.Registration;
+using Models.RepositoryResults;
 using Models.Tables;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -17,7 +18,7 @@ namespace Repositories
     {
         int CreateUser(LoginRegisterModel user, string role);
         Array GetAllUsers();
-        Task<Object> GetJwtToken(LoginRegisterModel loginModel);
+        Task<GetJwtResult> GetJwtToken(LoginRegisterModel loginModel);
         Task<IdentityResult> AssignCustomer(FrontCustomer frontCustomer, string userId);
         Object GetCustomer(string id);
         Task UpdateUser(AppUser appUser);
@@ -68,8 +69,9 @@ namespace Repositories
             return _userManager.Users.Include(u => u.Customer).ToArray();
         }
 
-        public async Task<Object> GetJwtToken(LoginRegisterModel loginModel)
+        public async Task<GetJwtResult> GetJwtToken(LoginRegisterModel loginModel)
         {
+            GetJwtResult resutl = new GetJwtResult();
             var user = await _userManager.FindByNameAsync(loginModel.UserName);
             IdentityOptions _options = new IdentityOptions();
             if (user != null && await _userManager.CheckPasswordAsync(user, loginModel.Password))
@@ -90,11 +92,16 @@ namespace Repositories
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
-                return new { token };
+                resutl.token = token;
+                resutl.success = true;
+                return resutl;
 
             }
             else
-                return new { message = "Username or password is incorrect." };
+            {
+                resutl.success = false;
+                return resutl;
+            }                
         }
 
         public async Task<IdentityResult> AssignCustomer(FrontCustomer frontCustomer, string userId)
@@ -164,3 +171,5 @@ namespace Repositories
 
     }
 }
+
+

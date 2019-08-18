@@ -57,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="card m-1" *ngFor="let order of orders; let i =index" style="width: 100%;">
-                    <div class="card m-1" style="width: 100%;">
+                    <div class="card " style="width: 100%;">
                         <p class="card-text m-2">Заказ номер {{order.id}}</p>
                         <!-- <p class="card-text">Дата доставки: {{String(order.shipment_Date)}}</p> -->
                         <p class="card-text m-2">Дата заказа: {{getDate(order.order_Date)}}</p>
@@ -83,7 +83,7 @@
 
 
                     </div>
-                    <div class="card m-1" style="width: 100%;">
+                    <div class="card" style="width: 100%;">
                         <table class="table align-middle">
                             <thead>
                                 <th>Наименование</th>
@@ -124,8 +124,8 @@
                     </div>
                     <div *ngIf="isOrderEdit(order.id)" class="d-flex justify-content-between">
                         <div class="d-flex justify-content-between ml-3">
-                            <p class="my-auto"> Наименование товара: </p>
-                            <div class="position-relative">
+                            <p class="my-auto"> Добавить товар: </p>
+                            <div class="position-relative my-auto">
                                 <input class="form-control my-auto" name="searchBox" (keyup)="onChange()"
                                     autocomplete="off" [(ngModel)]="searchItem"
                                     style=" width: 150px; height: 2em; min-height: 1em;">
