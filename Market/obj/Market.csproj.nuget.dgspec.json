@@ -4,64 +4,6 @@
     "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {}
   },
   "projects": {
-    "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj",
-        "projectName": "Models",
-        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj",
-        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
-        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp2.2"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp2.2": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp2.2": {
-          "dependencies": {
-            "IdentityCore": {
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[2.2.6, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
     "/Users/dmitriykuzin/Documents/GitHub/Market/Market/Market.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -86,8 +28,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
+              "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
+                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj"
               },
               "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj": {
                 "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj"
@@ -138,6 +80,64 @@
         }
       }
     },
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj",
+        "projectName": "Models",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj",
+        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "IdentityCore": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
     "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -162,8 +162,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
+              "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
+                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj"
               }
             }
           }
@@ -220,9 +220,6 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
-              },
               "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj": {
                 "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj"
               }

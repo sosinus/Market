@@ -101,8 +101,8 @@ C:/Users/Dim/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.cspro
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Models.dll
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Repositories.dll
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/UnitsOfWork.dll
-/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Models.pdb
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/UnitsOfWork.pdb
+/Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Models.pdb
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/bin/Debug/netcoreapp2.2/Repositories.pdb
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.csprojAssemblyReference.cache
 /Users/dmitriykuzin/Documents/GitHub/Market/Market/obj/Debug/netcoreapp2.2/Market.csproj.CoreCompileInputs.cache

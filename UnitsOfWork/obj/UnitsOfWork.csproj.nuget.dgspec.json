@@ -4,14 +4,14 @@
     "/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/UnitsOfWork.csproj": {}
   },
   "projects": {
-    "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj",
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj",
         "projectName": "Models",
-        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj",
         "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
-        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/obj/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -86,8 +86,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
+              "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
+                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj"
               }
             }
           }
@@ -144,8 +144,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
+              "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
+                "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj"
               },
               "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj": {
                 "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj"

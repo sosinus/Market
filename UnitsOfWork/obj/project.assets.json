@@ -13292,8 +13292,8 @@
     },
     "Models/1.0.0": {
       "type": "project",
-      "path": "../ClassLibrary1/Models.csproj",
-      "msbuildProject": "../ClassLibrary1/Models.csproj"
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     },
     "Repositories/1.0.0": {
       "type": "project",
@@ -13336,8 +13336,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj": {
-              "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/ClassLibrary1/Models.csproj"
+            "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
+              "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj"
             },
             "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj": {
               "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Repositories/Repositories.csproj"

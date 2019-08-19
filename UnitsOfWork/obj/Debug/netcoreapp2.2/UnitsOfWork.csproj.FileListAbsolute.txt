@@ -23,8 +23,8 @@ C:/Users/Dim/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOf
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/bin/Debug/netcoreapp2.2/UnitsOfWork.pdb
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/bin/Debug/netcoreapp2.2/Models.dll
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/bin/Debug/netcoreapp2.2/Repositories.dll
-/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/bin/Debug/netcoreapp2.2/Models.pdb
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/bin/Debug/netcoreapp2.2/Repositories.pdb
+/Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/bin/Debug/netcoreapp2.2/Models.pdb
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.csprojAssemblyReference.cache
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.csproj.CoreCompileInputs.cache
 /Users/dmitriykuzin/Documents/GitHub/Market/UnitsOfWork/obj/Debug/netcoreapp2.2/UnitsOfWork.AssemblyInfoInputs.cache
