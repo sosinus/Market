@@ -21,7 +21,7 @@ namespace Repositories
         Task<GetJwtResult> GetJwtToken(LoginRegisterModel loginModel);
         Task<IdentityResult> AssignCustomer(FrontCustomer frontCustomer, string userId);
         Customer GetCustomer(string id);
-        Task UpdateUser(AppUser appUser);
+        Task<IdentityResult> UpdateUser(AppUser appUser);
     }
 
     public class UMRepository : IUMRepository
@@ -55,15 +55,21 @@ namespace Repositories
                     if (userCreation.Succeeded)
                     {
                         if (inRoleAdding.Succeeded)
+                        {
                             result.IsAlreadyExist = false;
                             result.Success = true;
                             result.Message = "Пользователь успешно создан";
-                        AppUser appUser = _userManager.Users.SingleOrDefault(u => u.UserName == user.UserName);
-                        _userManager.DeleteAsync(appUser);
-                        result.IsAlreadyExist = false;
-                        result.Other = true;
-                        result.Message = "Не удалось создать пользователя";
-                    }                    
+                            result.UserId = appuser.Id;
+                        }
+                        else
+                        {
+                            AppUser appUser = _userManager.Users.SingleOrDefault(u => u.UserName == user.UserName);
+                            _userManager.DeleteAsync(appUser);
+                            result.IsAlreadyExist = false;
+                            result.Other = true;
+                            result.Message = "Не удалось создать пользователя";
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -153,23 +159,16 @@ namespace Repositories
 
         }
 
-        public async Task UpdateUser(AppUser appUser)
+        public async Task<IdentityResult> UpdateUser(AppUser appUser)
         {
-            // var user = _userManager.Users.SingleOrDefault(u=>u.Id == appUser.Id);
-
-            _context.Customers.Update(appUser.Customer);
-            await _context.SaveChangesAsync();
+            var customer = appUser.Customer;
             appUser.Customer = null;
-            try
-            {
+            var result = await _userManager.UpdateAsync(appUser);
+            _context.Entry(appUser).State = EntityState.Detached;
+            _context.Customers.Update(customer);
+            await _context.SaveChangesAsync();
 
-                var sus = _userManager.UpdateAsync(appUser).Result;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
+            return result;
         }
 
 

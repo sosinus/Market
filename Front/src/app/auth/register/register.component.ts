@@ -19,7 +19,6 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     this.message = ""
-
     if (form.valid) {
       this.apiService.register(form.value)
         .toPromise()

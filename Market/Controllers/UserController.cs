@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using Models.Registration;
+using Models.RepositoryResults;
+using System.Threading.Tasks;
 using UnitsOfWork;
 
 
@@ -29,7 +32,25 @@ namespace Market.Controllers
         [HttpPut]
         public IActionResult UpdateUser(AppUser appUser)
         {
-            return Ok(_marketUoW.UseUserMngmtRepository().UpdateUser(appUser));
+            var result = _marketUoW.UseUserMngmtRepository().UpdateUser(appUser).Result;           
+            return Ok(result);
+        }
+
+        [HttpPost]
+        public IActionResult CreateUser(FrontUser frontUser)
+        {
+            CreateUserResult result = new CreateUserResult();
+            LoginRegisterModel loginRegisterModel = new LoginRegisterModel() { UserName = frontUser.UserName, Password = frontUser.Password };
+            FrontCustomer frontCustomer = new FrontCustomer() { Address = frontUser.Address, Name = frontUser.Name };
+            var userCreationResult = _marketUoW.UseUserMngmtRepository().CreateUser(loginRegisterModel, "User");
+            if (userCreationResult.Success)
+            {
+              var assignResult =  _marketUoW.UseUserMngmtRepository().AssignCustomer(frontCustomer, userCreationResult.UserId).Result;
+               if(assignResult.Succeeded) {
+                    result.Success = true;
+                };
+            }
+            return Ok(result);
         }
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Market.Migrations
+namespace Models.Migrations
 {
     public partial class @new : Migration
     {
@@ -247,12 +247,12 @@ namespace Market.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "1", "a33f37e0-7e7c-45dc-bf70-bd7a6428f729", "Manager", "Manager" });
+                values: new object[] { "1", "b4db332c-b1b3-4a91-a3f1-0e6fc0ed0dad", "Manager", "Manager" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2", "db20cb91-0795-4d85-bf08-baa2193b25cc", "User", "User" });
+                values: new object[] { "2", "7b200770-def7-4c10-bf69-1ea0f4194c9a", "User", "User" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -282,13 +282,6 @@ namespace Market.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_Customer_Id",
-                table: "AspNetUsers",
-                column: "Customer_Id",
-                unique: true,
-                filter: "[Customer_Id] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
                 column: "NormalizedEmail");
@@ -299,6 +292,13 @@ namespace Market.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_Customer_Id",
+                table: "AspNetUsers",
+                column: "Customer_Id",
+                unique: true,
+                filter: "[Customer_Id] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItems_Item_Id",

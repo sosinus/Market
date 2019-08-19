@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-
+  @ViewChild('closeBtn', { static: false })
+  closeBtn: ElementRef
   constructor(private apiService:ApiService, private http: HttpClient) { }
 
   ngOnInit() {
@@ -24,6 +25,9 @@ export class UserEditComponent implements OnInit {
     .toPromise()
     .then((res:any)=>{
       console.log(res)
+      if(res.succeeded){
+        this.closeBtn.nativeElement.click()
+      }
     })
   }
   

@@ -22,3 +22,15 @@ C:/Users/Dim/Documents/GitHub/Market/Repositories/obj/Debug/netcoreapp2.2/Reposi
 /Users/dmitriykuzin/Documents/GitHub/Market/Repositories/obj/Debug/netcoreapp2.2/Repositories.csproj.CopyComplete
 /Users/dmitriykuzin/Documents/GitHub/Market/Repositories/obj/Debug/netcoreapp2.2/Repositories.dll
 /Users/dmitriykuzin/Documents/GitHub/Market/Repositories/obj/Debug/netcoreapp2.2/Repositories.pdb
+C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Repositories.deps.json
+C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Repositories.pdb
+C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Models.dll
+C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Models.pdb
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.pdb

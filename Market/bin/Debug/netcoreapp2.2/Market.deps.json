@@ -1438,6 +1438,7 @@
       },
       "UnitsOfWork/1.0.0": {
         "dependencies": {
+          "Models": "1.0.0",
           "Repositories": "1.0.0"
         },
         "runtime": {

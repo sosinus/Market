@@ -18,6 +18,7 @@ namespace Models.RepositoryResults
         public bool Success { get; set; }
         public bool IsAlreadyExist { get; set; }
         public bool Other { get; set; }
+        public string UserId { get; set; }
     }
 
     public class ItemResult
