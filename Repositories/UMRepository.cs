@@ -161,13 +161,8 @@ namespace Repositories
 
         public async Task<IdentityResult> UpdateUser(AppUser appUser)
         {
-            var customer = appUser.Customer;
-            appUser.Customer = null;
             var result = await _userManager.UpdateAsync(appUser);
-            _context.Entry(appUser).State = EntityState.Detached;
-            _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
-
             return result;
         }
 
