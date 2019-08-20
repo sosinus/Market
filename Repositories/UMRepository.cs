@@ -161,10 +161,14 @@ namespace Repositories
 
         public async Task<IdentityResult> UpdateUser(AppUser appUser)
         {
-            var result = await _userManager.UpdateAsync(appUser);
-            await _context.SaveChangesAsync();
-            return result;
-        }
+			var user = await _userManager.FindByIdAsync(appUser.Id);
+			user.UserName = appUser.UserName;
+			var result = await _userManager.UpdateAsync(user);
+			await _context.SaveChangesAsync();
+			_context.Customers.Update(appUser.Customer);
+			await _context.SaveChangesAsync();
+			return result;
+		}
 
 
     }
