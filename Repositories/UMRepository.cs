@@ -163,6 +163,7 @@ namespace Repositories
         {
 			var user = await _userManager.FindByIdAsync(appUser.Id);
 			user.UserName = appUser.UserName;
+            user.Email = appUser.Email;
 			var result = await _userManager.UpdateAsync(user);
 			await _context.SaveChangesAsync();
 			_context.Customers.Update(appUser.Customer);
