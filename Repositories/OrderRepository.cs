@@ -33,6 +33,7 @@ namespace Repositories
         {
             AddOrderResult result = new AddOrderResult();
             AppUser user = _userManager.Users.SingleOrDefault(u => u.Id == userId);
+            Customer customer = _context.Customers.SingleOrDefault(c => c.Id == user.Customer_Id);
             if (user.Customer_Id != null && orderItems.Length > 0)
             {
                 Order order = new Order()
@@ -51,6 +52,9 @@ namespace Repositories
                 {
                     orderItem.Order_Id = orderId;
                     orderItem.Item = null;
+                    var discount = customer.Discount;
+                    var price = orderItem.Item_Price;
+                    orderItem.Item_Price = price - (orderItem.Item_Price * discount) / 100;
                 }
 
                 await _context.OrderItems.AddRangeAsync(orderItems);
