@@ -11,7 +11,7 @@ export class AlertComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    setInterval(()=>this.apiService.alertMessage = null, 5000)
+    setInterval(()=>this.apiService.alertMessage = null, 10000)
   }
 
 }

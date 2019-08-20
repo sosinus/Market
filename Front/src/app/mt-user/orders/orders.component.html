@@ -1,11 +1,16 @@
 <div class="container">
     <div class="row">
-      <div class="card m-1"  *ngFor="let order of orders; let i =index" style="width: 100%;">
-        <p class="card-text">Заказ номер {{order.id}}</p>
+      <div class="m-1"  *ngFor="let order of orders; let i =index" style="width: 100%;">
+        <div class="card">
+          <div class="m-2">
+            <p class="ordtext">Заказ номер {{order.id}}</p>
         <!-- <p class="card-text">Дата доставки: {{String(order.shipment_Date)}}</p> -->
-              <p class="card-text">Дата заказа: {{getDate(order.order_Date)}}</p>
-              <p class="card-text">Статус: {{order.status}}</p>
-      <div class="card m-1"  *ngFor="let orderItem of order.orderItems; let i =index" style=" height: 140px">
+              <p class="ordtext">Дата заказа: {{getDate(order.order_Date)}}</p>
+              <p class="ordtext">Статус: {{order.status}}</p>
+          </div>
+          
+        </div>        
+      <div class="card "  *ngFor="let orderItem of order.orderItems; let i =index" style=" height: 140px">
         <div class="row no-gutters">
           <div  class="col-md-4" style=" text-align: center">
             <img src="{{apiService.forImagesApiURI + orderItem.item.image}}" alt="..." style="height: 130px">
