@@ -29,8 +29,6 @@ export class ItemEditComponent implements OnInit {
           }
         )
         .then(() => this.apiService.getItems())
-
-
     }
   }
 
@@ -49,6 +47,5 @@ export class ItemEditComponent implements OnInit {
   del(image) {
     this.apiService.images = this.apiService.images.filter(im => im != image)
   }
-
 
 }

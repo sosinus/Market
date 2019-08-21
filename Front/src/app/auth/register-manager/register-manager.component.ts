@@ -22,16 +22,14 @@ export class RegisterManagerComponent implements OnInit {
     this.http.post(this.apiService.apiURI + "Auth/CreateManager", form.value)
       .subscribe((res: CreateUserResult) => {
         if (res.success) {
-          console.log(res.message)
           form.reset()
           this.apiService.hideAlert = false
-          //this.router.navigateByUrl('login')
           location.href = 'manager-panel'
         }
         else
           this.message = res.message
       }
       )
-  }
+    }
 
 }

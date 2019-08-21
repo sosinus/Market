@@ -14,3 +14,7 @@
 p{
     margin-top: revert
 }
+
+.countBtn{
+    min-height: 1px;
+}

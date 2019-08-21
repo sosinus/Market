@@ -1,23 +1,22 @@
-export class GetJwtResult{
+export class GetJwtResult {
     token: string
     success: boolean
 }
-export class LoadPageResult{
+export class LoadPageResult {
     hasDefaultUser: boolean
 }
 
-export class CreateUserResult
-{
+export class CreateUserResult {
     message: string
-    success:boolean
-    isAlreadyExist:boolean
-    other:boolean
+    success: boolean
+    isAlreadyExist: boolean
+    other: boolean
 }
 
-export class ItemResult{
+export class ItemResult {
     success: boolean
 }
-export class AddOrderResult{
+export class AddOrderResult {
     success: boolean
 }
 

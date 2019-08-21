@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
-import { Item } from 'src/app/models/Item';
-import { element } from 'protractor';
 import { ViewChild, ElementRef } from '@angular/core';
-import { ItemListComponent } from '../item-list/item-list.component';
 import { ItemResult } from 'src/app/models/results';
 
 
@@ -19,8 +16,7 @@ import { ItemResult } from 'src/app/models/results';
 export class ItemNewComponent implements OnInit {
   @ViewChild('closeBtn', { static: false }) closeBtn: ElementRef;
   constructor(private apiService: ApiService) {
-    this.apiService.images = new Array<string>()
-    // this.apiService.images.push("https://localhost:44369/Resources/Images/Temp/e7e85af4-ae4f-4579-b612-10b8b324fdf8/Vh7oLhOuS-8.jpg")
+    this.apiService.images = new Array<string>() 
   }
 
   ngOnInit() {
@@ -38,7 +34,7 @@ export class ItemNewComponent implements OnInit {
               this.apiService.getItems()
             }
             else
-            this.apiService.makeAlert("Не удалось добавить товар")
+              this.apiService.makeAlert("Не удалось добавить товар")
           }
         )
     }

@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ManagerPanelComponent implements OnInit {
 
-  constructor(private apiService:ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
-  logout(){
+  logout() {
     this.apiService.logout()
     this.router.navigateByUrl('')
 

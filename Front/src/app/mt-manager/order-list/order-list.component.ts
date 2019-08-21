@@ -21,6 +21,7 @@ export class OrderListComponent implements OnInit {
   users: User[]
   items: Item[]
   searchItem: string
+  shipDate: string
   private orderSnapShot: Order = new Order()
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
@@ -46,7 +47,12 @@ export class OrderListComponent implements OnInit {
   }
 
   getDate(date: string): string {
-    return date.split('T')[0]
+    let result
+    if(date.slice(0,2) == "00")
+      result = "Не доступно"
+    else
+      result = date.split('T')[0]  
+    return result
   }
 
   changeStatus(order: Order, status: string) {
@@ -86,7 +92,10 @@ export class OrderListComponent implements OnInit {
           return true
       })
     }
+  }
 
+  onDateChange(order: Order){
+    order.shipment_Date = this.shipDate
   }
 
   addOrderItem(order: Order, item: Item) {

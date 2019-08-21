@@ -26,8 +26,13 @@ export class OrdersComponent implements OnInit {
       console.log(err))           
   }
 
-  getDate(date: string):string{
-    return date.split('T')[0]
+  getDate(date: string): string {
+    let result
+    if(date.slice(0,2) == "00")
+      result = "Не доступно"
+    else
+      result = date.split('T')[0]  
+    return result
   }
 
   cancelOrder(order:Order){

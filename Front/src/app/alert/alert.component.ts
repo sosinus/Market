@@ -7,11 +7,11 @@ import { ApiService } from '../api.service';
   styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit {
- 
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    setInterval(()=>this.apiService.alertMessage = null, 10000)
+    setInterval(() => this.apiService.alertMessage = null, 5000)
   }
 
 }

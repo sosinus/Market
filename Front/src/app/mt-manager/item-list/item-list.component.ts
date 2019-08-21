@@ -10,14 +10,14 @@ import { ItemEditComponent } from '../item-edit/item-edit.component';
 })
 export class ItemListComponent implements OnInit {
   @ViewChild('openBtn', { static: false }) openBtn: ElementRef;
-  constructor(private apiService:ApiService) {
-    
-   }
+  constructor(private apiService: ApiService) {
+
+  }
 
   ngOnInit() {
     this.apiService.getItems();
   }
-  onRowClick(item:Item){    
+  onRowClick(item: Item) {
     this.apiService.editItem = item
     this.apiService.getImagesForEdit()
     this.openBtn.nativeElement.click()

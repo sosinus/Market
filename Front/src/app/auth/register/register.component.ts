@@ -57,7 +57,6 @@ export class RegisterComponent implements OnInit {
       else
         if (form.value.UserName.length < 3)
           this.message = 'Слишком короткий логин'
-
     }
 
 

@@ -1,9 +1,6 @@
 <div class="row">
     <div class="col-3 position-fixed">
-
-
         <div class="d-flex justify-content-between border-bottom border-primary">
-
             <ul class="nav ">
                 <div class="border-bottom border-primary mb-2" style="width: 100% ">
                     <h4>Фильтры</h4>
@@ -29,7 +26,6 @@
                 </li>
             </ul>
         </div>
-
         <div class="d-flex justify-content-between border-bottom border-primary mt-4" id="navbar-example2">
 
             <ul class="nav ">
@@ -50,8 +46,6 @@
                 </div>
             </ul>
         </div>
-
-
     </div>
     <div class="offset-3 col-9">
         <div class="container">
@@ -59,7 +53,8 @@
                 <div class="card m-1" *ngFor="let order of orders; let i =index" style="width: 100%;">
                     <div class="card " style="width: 100%;">
                         <p class="card-text m-2">Заказ номер {{order.id}}</p>
-                        <!-- <p class="card-text">Дата доставки: {{String(order.shipment_Date)}}</p> -->
+                        <p class="card-text m-2">Дата доставки: {{getDate(order.shipment_Date)}}</p>
+                        <input #dateInput type="date" class="ml-2"  *ngIf="isOrderEdit(order.id)" style="width:140px" [(ngModel)]="shipDate" (change)="onDateChange(order)">
                         <p class="card-text m-2">Дата заказа: {{getDate(order.order_Date)}}</p>
                         <div>
                             <p class="card-text m-2">Сатус: {{order.status}}</p>
@@ -78,10 +73,7 @@
                                     <a class="dropdown-item" (click)="changeStatus(order, 'Отменен')">Отменить заказ</a>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
                     <div class="card" style="width: 100%;">
                         <table class="table align-middle">
@@ -102,10 +94,11 @@
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <button class="btn btn-link p-1" *ngIf="isOrderEdit(order.id)" (click)="reduceQuantity(orderItem)"
-                                                style="font-size: small;">-</button>
-                                            <p>{{orderItem.items_count}}</p>
-                                            <button class="btn btn-link p-1" *ngIf="isOrderEdit(order.id)" (click)="increaseQuantity(orderItem)"
+                                            <button class="btn btn-link p-1 countBtn" *ngIf="isOrderEdit(order.id)"
+                                                (click)="reduceQuantity(orderItem)" style="font-size: small;">-</button>
+                                            <div>{{orderItem.items_count}}</div>
+                                            <button class="btn btn-link p-1 countBtn" *ngIf="isOrderEdit(order.id)"
+                                                (click)="increaseQuantity(orderItem)"
                                                 style="font-size: small;">+</button>
                                         </div>
                                     </td>
@@ -117,14 +110,12 @@
                                             (click)="deleteItem(order, orderItem.id)">Удалить</button>
                                     </td>
                                 </tr>
-
-
                             </tbody>
                         </table>
                     </div>
                     <div *ngIf="isOrderEdit(order.id)" class="d-flex justify-content-between">
                         <div class="d-flex justify-content-between ml-2">
-                            <p class="mr-2"> Добавить товар: </p>
+                            <p class="my-auto mr-1"> Добавить товар: </p>
                             <div class="position-relative my-auto">
                                 <input class="form-control my-auto" name="searchBox" (keyup)="onChange()"
                                     autocomplete="off" [(ngModel)]="searchItem"
@@ -142,19 +133,15 @@
                                     </table>
                                 </div>
                             </div>
-
                         </div>
-
                         <div>
                             <button class="btn btn-secondary m-1" (click)="cancelEdit(order)">Отменить</button>
                             <button class="btn btn-primary m-1" (click)="saveChanges(order)">Сохранить</button>
                         </div>
-
                     </div>
                     <div class="ml-2">
-                         <p>Сумма: {{totalPrice(order)}}</p>
+                        <p>Сумма: {{totalPrice(order)}}</p>
                     </div>
-                   
                 </div>
             </div>
         </div>
