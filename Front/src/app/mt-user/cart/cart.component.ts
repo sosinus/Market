@@ -37,12 +37,6 @@ export class CartComponent implements OnInit {
     return total
   }
 
-  totalPriceWithDiscount(){
-    var totalPrice = this.totalPrice()
-    var priceWithDiscount = totalPrice - (totalPrice * this.discount)/100
-    return priceWithDiscount
-  }
-
   priceWithDiscount(price : number){
     var priceWithDiscount = price - (price * this.discount)/100
     return priceWithDiscount

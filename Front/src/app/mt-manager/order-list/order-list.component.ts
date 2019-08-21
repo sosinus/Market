@@ -120,6 +120,14 @@ export class OrderListComponent implements OnInit {
 
   }
 
+  totalPrice(order: Order){
+    let total: number = 0
+    order.orderItems.forEach(element => {
+      total = total + element.item_Price * element.items_count
+    });
+    return total
+  }
+
   filterOrdersByStatus(filter: string) {
     if (filter == "All") this.orders = this.ordersCopy
     if (filter == "New") this.orders = this.ordersCopy.filter(o => o.status == "Новый")

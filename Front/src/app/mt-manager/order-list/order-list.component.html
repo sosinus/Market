@@ -123,8 +123,8 @@
                         </table>
                     </div>
                     <div *ngIf="isOrderEdit(order.id)" class="d-flex justify-content-between">
-                        <div class="d-flex justify-content-between ml-3">
-                            <p class="my-auto"> Добавить товар: </p>
+                        <div class="d-flex justify-content-between ml-2">
+                            <p class="mr-2"> Добавить товар: </p>
                             <div class="position-relative my-auto">
                                 <input class="form-control my-auto" name="searchBox" (keyup)="onChange()"
                                     autocomplete="off" [(ngModel)]="searchItem"
@@ -151,7 +151,10 @@
                         </div>
 
                     </div>
-                    <p>сумма</p>
+                    <div class="ml-2">
+                         <p>Сумма: {{totalPrice(order)}}</p>
+                    </div>
+                   
                 </div>
             </div>
         </div>
