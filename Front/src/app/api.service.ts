@@ -123,6 +123,14 @@ export class ApiService {
         });
       })
   }
+
+  async getDiscount(){
+    let discount;
+   await this.http.get(this.apiURI + "User/GetDiscount")
+    .toPromise()
+    .then((res:any)=>discount = res)
+   return discount
+  }
   //--------Item Managment----------------
   postItem() {
     return this.http.post(this.apiURI + 'items', this.item)

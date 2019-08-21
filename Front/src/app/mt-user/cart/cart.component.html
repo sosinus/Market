@@ -12,7 +12,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ordItem.item.name}}</h5>
             <p class="card-text">Цена за шт: {{ordItem.item.price}}</p>
-            <p class="card-text">Цена со скидкой: {{ordItem.item.price}}</p>
+            <p class="card-text">Цена со скидкой: {{priceWithDiscount(ordItem.item.price)}}</p>
             <p class="card-text">Категория: {{ordItem.item.category}}</p>
             <p class="card-text"><small class="text-muted">Код товара: {{ordItem.item.code}}</small></p>
           </div>
@@ -25,7 +25,7 @@
               {{ordItem.items_count}}
               <button class="btn btn-link p-1" (click)="increaseQuantity(ordItem)" style="font-size: small;">+</button>
             </p>
-            <p class="card-text">Цена: {{ordItem.item.price*ordItem.items_count}} руб.</p>
+            <p class="card-text">Цена: {{priceWithDiscount(ordItem.item.price*ordItem.items_count)}} руб.</p>
           </div>
         </div>
       </div>
@@ -36,7 +36,9 @@
         <div class="col-md-3 offset-md-3">
           <div class="card-body">
             <p class="card-text">Всего товаров: {{countOfItems()}}</p>
+            <p class="card-text">Скидка: {{discount}}%</p>
             <p class="card-text">На общую сумму: {{totalPrice()}} руб.</p>
+            <p class="card-text">С учетом скидки: {{priceWithDiscount(totalPrice())}} руб.</p>
           </div>
         </div>
         <div class="col-md-6">

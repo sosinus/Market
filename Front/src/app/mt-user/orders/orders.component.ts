@@ -17,6 +17,9 @@ export class OrdersComponent implements OnInit {
       .toPromise()
       .then((res: any) => {
         this.orders = res as Order[]
+        this.orders.sort((a,b)=>{
+          return b.id - a.id
+        })
         console.log(res)        
       },
       err=>

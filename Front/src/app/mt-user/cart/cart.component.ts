@@ -14,9 +14,11 @@ export class CartComponent implements OnInit {
   openModal: ElementRef;
   @ViewChild('openLoginModal', { static: false })
   openLoginModal: ElementRef;
+  discount: number = 0
   constructor(private apiService: ApiService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.discount = await this.apiService.getDiscount()   
   }
 
   countOfItems() {
@@ -33,6 +35,17 @@ export class CartComponent implements OnInit {
       total = total + element.item.price * element.items_count
     });
     return total
+  }
+
+  totalPriceWithDiscount(){
+    var totalPrice = this.totalPrice()
+    var priceWithDiscount = totalPrice - (totalPrice * this.discount)/100
+    return priceWithDiscount
+  }
+
+  priceWithDiscount(price : number){
+    var priceWithDiscount = price - (price * this.discount)/100
+    return priceWithDiscount
   }
 
   onMakeOrder() {

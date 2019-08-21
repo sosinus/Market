@@ -22,6 +22,7 @@ namespace Repositories
         Task<IdentityResult> AssignCustomer(FrontCustomer frontCustomer, string userId);
         Customer GetCustomer(string id);
         Task<IdentityResult> UpdateUser(AppUser appUser);
+        int GetDiscount(string userId);
     }
 
     public class UMRepository : IUMRepository
@@ -170,6 +171,15 @@ namespace Repositories
 			await _context.SaveChangesAsync();
 			return result;
 		}
+
+        public int GetDiscount(string userId)
+        {
+            var user = _userManager.FindByIdAsync(userId).Result;
+            var customerId = user.Customer_Id;
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == customerId);
+            var discount = customer.Discount;
+            return discount;
+        }
 
 
     }

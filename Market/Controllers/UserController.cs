@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.Registration;
 using Models.RepositoryResults;
+using System.Linq;
 using System.Threading.Tasks;
 using UnitsOfWork;
 
@@ -51,6 +52,16 @@ namespace Market.Controllers
                 };
             }
             return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("GetDiscount")]
+        [Authorize(Roles = "User")]
+        public IActionResult GetDiscount()
+        {
+            var userId = User.Claims.SingleOrDefault(c => c.Type == "UserID").Value;
+            var discount = _marketUoW.UseUserMngmtRepository().GetDiscount(userId);
+            return Ok(discount);
         }
     }
 }
