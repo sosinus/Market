@@ -8,6 +8,8 @@
       <File FileName="Repositories/OrderRepository.cs" />
       <File FileName="Market/Controllers/UserController.cs" />
       <File FileName="Market/Controllers/AuthController.cs" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/2.2.401/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="207" Column="1" />
+      <File FileName="Models/ApplicationSettings.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +19,9 @@
               <Node name="Controllers" expanded="True" />
               <Node name="appsettings.json" selected="True" />
             </Node>
-            <Node name="Models" expanded="True" />
+            <Node name="Models" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
             <Node name="Repositories" expanded="True" />
             <Node name="UnitsOfWork" expanded="True" />
           </Node>
