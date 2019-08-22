@@ -30,7 +30,7 @@ export class ApiService {
   public cartItems: Item[]
   public currentCustomer: Customer
   public userForEdit: User
-  public apiURI = "https://localhost:5001/api/"
+  public apiURI = "https://localhost:44369/api/"
   public forImagesApiURI = this.apiURI.slice(0, -4)
 
   constructor(private http: HttpClient, private router: Router) {
