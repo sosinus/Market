@@ -20,7 +20,7 @@ export class OrdersComponent implements OnInit {
         this.orders.sort((a,b)=>{
           return b.id - a.id
         })
-        console.log(res)        
+               
       },
       err=>
       console.log(err))           

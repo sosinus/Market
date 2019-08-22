@@ -63,8 +63,7 @@ export class OrderListComponent implements OnInit {
   }
 
   editOrder(order: Order) {
-    this.orderForEdit = JSON.parse(JSON.stringify(order));
-    console.log(this.orderForEdit)
+    this.orderForEdit = JSON.parse(JSON.stringify(order));    
   }
 
   isOrderEdit(id: number) {

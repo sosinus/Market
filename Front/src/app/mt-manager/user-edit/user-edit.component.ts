@@ -24,7 +24,8 @@ export class UserEditComponent implements OnInit {
     this.http.put(this.apiService.apiURI + 'User', this.apiService.userForEdit)
     .toPromise()
     .then((res:any)=>{
-      console.log(res)
+      
+      
       if(res.succeeded){
         this.closeBtn.nativeElement.click()
       }
