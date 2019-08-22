@@ -45,3 +45,4 @@ C:\Users\User\Documents\GitHub\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Reposi
 C:\Users\User\Documents\GitHub\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Repositories.pdb
 C:\Users\User\Documents\GitHub\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Models.pdb
 C:\Users\User\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csprojAssemblyReference.cache
