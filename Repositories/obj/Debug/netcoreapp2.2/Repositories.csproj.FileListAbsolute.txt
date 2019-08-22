@@ -33,3 +33,4 @@ C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Repos
 C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Models.dll
 C:\Users\User\Documents\GitHub\Market\Repositories\bin\Debug\netcoreapp2.2\Models.pdb
 C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csprojAssemblyReference.cache
