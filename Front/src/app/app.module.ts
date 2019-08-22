@@ -27,6 +27,8 @@ import { UserListComponent } from './mt-manager/user-list/user-list.component';
 import { UserEditComponent } from './mt-manager/user-edit/user-edit.component';
 import { UserNewComponent } from './mt-manager/user-new/user-new.component';
 import { OrderListComponent } from './mt-manager/order-list/order-list.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -51,7 +53,9 @@ import { OrderListComponent } from './mt-manager/order-list/order-list.component
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule
    
   ],
   providers: [ApiService,{
