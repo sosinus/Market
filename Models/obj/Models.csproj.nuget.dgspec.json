@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\GitHub\\Market\\Models\\Models.csproj": {}
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\GitHub\\Market\\Models\\Models.csproj": {
+    "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\Market\\Models\\Models.csproj",
+        "projectUniqueName": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\Market\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\Market\\Models\\obj\\",
+        "projectPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/Models.csproj",
+        "packagesPath": "/Users/dmitriykuzin/.nuget/packages/",
+        "outputPath": "/Users/dmitriykuzin/Documents/GitHub/Market/Models/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dmitriykuzin/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
