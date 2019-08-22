@@ -22,6 +22,7 @@ export class OrderListComponent implements OnInit {
   items: Item[]
   searchItem: string
   shipDate: string
+
   private orderSnapShot: Order = new Order()
   constructor(private apiService: ApiService, private http: HttpClient) { }
 
@@ -45,6 +46,8 @@ export class OrderListComponent implements OnInit {
     this.orderForEdit = new Order()
 
   }
+
+ 
 
   getDate(date: string): string {
     let result
@@ -94,8 +97,8 @@ export class OrderListComponent implements OnInit {
     }
   }
 
-  onDateChange(order: Order){
-    order.shipment_Date = this.shipDate
+  onDateChange(date:string, order: Order){    
+    order.shipment_Date = date
   }
 
   addOrderItem(order: Order, item: Item) {

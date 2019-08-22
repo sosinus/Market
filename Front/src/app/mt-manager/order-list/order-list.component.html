@@ -56,14 +56,16 @@
                         <p class="card-text m-2">Дата доставки: {{getDate(order.shipment_Date)}}</p>
                         <div class="m-2" *ngIf="isOrderEdit(order.id)" style="width:140px">
                             <input type="text"
+                            #dateInput
                                    placeholder="Выбирете дату"
                                    class="form-control"
-                                   bsDatepicker                                   
+                                   bsDatepicker                                                                    
                                    [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
                                    [(ngModel)]="shipDate"
-                                    (ngModelChange)="onDateChange(order)">
-                          </div>
-                        <!-- <input #dateInput type="date" class="ml-2"  *ngIf="isOrderEdit(order.id)" style="width:140px" [(ngModel)]="shipDate" (change)="onDateChange(order)"> -->
+                                    (ngModelChange)="onDateChange(dateInput.value, order)"                                    
+                                    >
+                          </div>                          
+                       
                         <p class="card-text m-2">Дата заказа: {{getDate(order.order_Date)}}</p>
                         <div>
                             <p class="card-text m-2">Сатус: {{order.status}}</p>
